@@ -1,5 +1,5 @@
 ---
-name: build-ublue-custom
+name: build-tohuros
 on:
   pull_request:
     branches:
@@ -10,19 +10,21 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**/README.md'
+      - '**.md'
+      - '**.txt'
   workflow_dispatch:
 
 env:
-  MY_IMAGE_NAME: "${{ github.event.repository.name }}"  # the name of the image produced by this build, matches repo names
-  MY_IMAGE_DESC: "My Customized Universal Blue Image"
-  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
+  MY_IMAGE_NAME: "tohuros"
+  ARG_BASE_IMAGE_NAME: "bazzite"
+  ARG_IMAGE_TAG: "stable"
+  IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
 
 jobs:
-  build_push:
+  push-ghcr:
     name: Build and push image
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
+    continue-on-error: false
     permissions:
       contents: read
       packages: write
@@ -33,19 +35,29 @@ jobs:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
 
+      - name: Check just syntax
+        uses: ublue-os/just-action@v1
+
       - name: Generate tags
         id: generate-tags
         shell: bash
         run: |
           # Generate a timestamp for creating an image version history
           TIMESTAMP="$(date +%Y%m%d)"
+          VARIANT="${{ env.ARG_IMAGE_TAG }}"
+
           COMMIT_TAGS=()
           BUILD_TAGS=()
 
           # Have tags for tracking builds during pull request
           SHA_SHORT="${GITHUB_SHA::7}"
+          COMMIT_TAGS+=("pr-${{ github.event.number }}-${VARIANT}")
+          COMMIT_TAGS+=("${SHA_SHORT}-${VARIANT}")
+
           COMMIT_TAGS+=("pr-${{ github.event.number }}")
           COMMIT_TAGS+=("${SHA_SHORT}")
+
+          BUILD_TAGS=("${VARIANT}")
 
           # Append matching timestamp tags to keep a version history
           for TAG in "${BUILD_TAGS[@]}"; do
@@ -73,6 +85,12 @@ jobs:
 
           echo "alias_tags=${alias_tags[*]}" >> $GITHUB_OUTPUT
 
+      - name: Get current version
+        id: labels
+        run: |
+          ver=$(skopeo inspect docker://ghcr.io/ublue-os/${{ env.ARG_BASE_IMAGE_NAME }}:${{ env.ARG_IMAGE_TAG }} | jq -r '.Labels["org.opencontainers.image.version"]')
+          echo "VERSION=$ver" >> $GITHUB_OUTPUT
+
       # Build metadata
       - name: Image Metadata
         uses: docker/metadata-action@v5
@@ -83,8 +101,10 @@ jobs:
 
           labels: |
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/${{ github.repository }}/main/README.md
-            org.opencontainers.image.description=${{ env.MY_IMAGE_DESC }}
+            io.artifacthub.package.logo-url=https://raw.githubusercontent.com/${{ github.repository }}/main/assets/logo.jpg
+            org.opencontainers.image.description=Customized ${{ env.ARG_BASE_IMAGE_NAME }} image that includes additional features for developers and system administrators.
             org.opencontainers.image.title=${{ env.MY_IMAGE_NAME }}
+            org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
 
       # Build image using Buildah action
       - name: Build Image
@@ -98,6 +118,9 @@ jobs:
           image: ${{ env.MY_IMAGE_NAME }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
+          build-args: |
+            BASE_IMAGE_NAME=${{ env.ARG_BASE_IMAGE_NAME }}
+            IMAGE_TAG=${{ env.ARG_IMAGE_TAG }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
 
@@ -116,7 +139,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push Image to GHCR
+      # Push the image to GHCR (Image Registry)
+      - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
         id: push
         env:
@@ -131,17 +155,11 @@ jobs:
           extra-args: |
             --disable-content-trust
 
-      # This section is optional and only needs to be enabled in you plan on distributing
-      # your project to others to consume. You will need to create a public and private key
-      # using Cosign and save the private key as a repository secret in Github for this workflow
-      # to consume. For more details, review the image signing section of the README.
-
       # Sign container
       - uses: sigstore/cosign-installer@v3.5.0
-        if: github.event_name != 'pull_request'
 
       - name: Sign container image
-        if: github.event_name != 'pull_request'
+        shell: bash
         run: |
           cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ steps.build_image.outputs.image }}@${TAGS}
         env:
