@@ -27,8 +27,15 @@ kmousetool \
 qsynth && \
 ostree container commit && \
 rpm-ostree install \
+hipblas \
+hipblas-devel \
 konsole \
-rust \
 pamixer \
+rocblas \
+rocblas-devel \
+rocm-hip-devel \
+rocm-opencl-devel \
+rocm-smi \
+rust \
 cargo && \
 ostree container commit
