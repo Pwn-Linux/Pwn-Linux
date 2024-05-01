@@ -15,6 +15,7 @@ RELEASE="$(rpm -E %fedora)"
 # this installs a package from fedora repos
 rpm-ostree override remove pipewire-pulseaudio --install pulseaudio
 rpm-ostree override remove ptyxis
+rpm-ostree override remove kde-connect-libs kdeconnectd kde-connect
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
