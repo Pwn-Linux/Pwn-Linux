@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite:stable AS facillinux
+FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux
 
 COPY build.sh /tmp/build.sh
 

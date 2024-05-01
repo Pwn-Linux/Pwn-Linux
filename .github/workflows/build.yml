@@ -1,21 +1,25 @@
 ---
-name: build-facillinux
+name: build-pwnlinux
 on:
   pull_request:
     branches:
       - main
+      - testing
+      - unstable
   schedule:
     - cron: '05 10 * * *'  # 10:05am UTC everyday
   push:
     branches:
       - main
+      - testing
+      - unstable
     paths-ignore:
       - '**.md'
       - '**.txt'
   workflow_dispatch:
 
 env:
-  MY_IMAGE_NAME: "facillinux"
+  MY_IMAGE_NAME: "pwnlinux"
   ARG_BASE_IMAGE_NAME: "bazzite"
   ARG_IMAGE_TAG: "stable"
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
