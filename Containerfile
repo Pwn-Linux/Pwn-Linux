@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite:stable AS cinchos
+FROM ghcr.io/ublue-os/bazzite:stable AS facillinux
 
 COPY build.sh /tmp/build.sh
 
