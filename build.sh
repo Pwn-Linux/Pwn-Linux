@@ -23,4 +23,7 @@ kde-connect \
 krfb \
 krfb-libs \
 qsynth && \
+ostree container commit && \
+rpm-ostree install \
+konsole && \
 ostree container commit
