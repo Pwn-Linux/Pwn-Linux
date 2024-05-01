@@ -20,13 +20,13 @@ ptyxis \
 kde-connect-libs \
 kdeconnectd \
 kde-connect \
+kcharselect \
 krfb \
 krfb-libs \
 kmousetool \
 qsynth && \
 ostree container commit && \
 rpm-ostree install \
-hipify \
 hipblas \
 hipblas-devel \
 konsole \
