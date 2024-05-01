@@ -27,9 +27,8 @@ kmousetool \
 qsynth && \
 ostree container commit && \
 rpm-ostree install \
-hipblas \
 konsole \
-rocblas \
 rust \
+pamixer \
 cargo && \
 ostree container commit
