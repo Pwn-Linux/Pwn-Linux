@@ -29,7 +29,6 @@ ostree container commit && \
 rpm-ostree install \
 hipblas \
 konsole \
-pamixer \
 rocblas \
 rust \
 cargo && \
