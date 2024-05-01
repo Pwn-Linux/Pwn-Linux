@@ -13,11 +13,18 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree override remove pipewire-pulseaudio --install pulseaudio
-rpm-ostree override remove ptyxis
-rpm-ostree override remove kde-connect-libs kdeconnectd kde-connect
-rpm-ostree override remove krfb krfb-libs
-rpm-ostree override remove webapp-manager
+rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
+ostree container commit && \
+rpm-ostree override remove \
+ptyxis \
+kde-connect-libs \
+kdeconnectd \
+kde-connect \
+krfb \
+krfb-libs \
+webapp-manager \
+qsynth && \
+ostree container commit
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
