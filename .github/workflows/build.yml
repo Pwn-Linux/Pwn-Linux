@@ -1,9 +1,10 @@
-name: Build Bazzite
+name: Build Facil Linux
 on:
   schedule:
     - cron: '40 16 * * 2,5' # 16:40 utc tues thurs
   pull_request:
     branches:
+      - main
       - testing
       - unstable
     paths-ignore:
@@ -16,6 +17,7 @@ on:
       - '.github/workflows/build_iso.yml'
   push:
     branches:
+      - main
       - testing
       - unstable
     paths-ignore:
@@ -30,10 +32,6 @@ on:
   workflow_dispatch:
 env:
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
-  cancel-in-progress: true
 
 jobs:
   push-ghcr:
