@@ -22,6 +22,7 @@ kdeconnectd \
 kde-connect \
 krfb \
 krfb-libs \
+kmousetool \
 qsynth && \
 ostree container commit && \
 rpm-ostree install \
