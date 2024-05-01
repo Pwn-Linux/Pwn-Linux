@@ -28,13 +28,9 @@ qsynth && \
 ostree container commit && \
 rpm-ostree install \
 hipblas \
-hipblas-devel \
 konsole \
 pamixer \
 rocblas \
-rocblas-devel \
-rocm-hip-devel \
-rocm-opencl-devel \
 rust \
 cargo && \
 ostree container commit
