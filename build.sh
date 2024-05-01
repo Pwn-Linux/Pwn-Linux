@@ -26,6 +26,7 @@ qsynth && \
 ostree container commit && \
 rpm-ostree install \
 konsole \
+pamixer \
 rust \
 cargo && \
 ostree container commit
