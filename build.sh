@@ -17,6 +17,7 @@ rpm-ostree override remove pipewire-pulseaudio --install pulseaudio
 rpm-ostree override remove ptyxis
 rpm-ostree override remove kde-connect-libs kdeconnectd kde-connect
 rpm-ostree override remove krfb krfb-libs
+rpm-ostree override remove webapp-manager
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
