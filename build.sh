@@ -25,5 +25,7 @@ krfb-libs \
 qsynth && \
 ostree container commit && \
 rpm-ostree install \
-konsole && \
+konsole \
+rust \
+cargo && \
 ostree container commit
