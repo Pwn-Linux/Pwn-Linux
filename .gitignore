@@ -1,1 +1,6 @@
 cosign.key
+/.idea/.gitignore
+/.idea/IdeaProjects.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
