@@ -35,7 +35,6 @@ rocblas \
 rocblas-devel \
 rocm-hip-devel \
 rocm-opencl-devel \
-rocm-smi \
 rust \
 cargo && \
 ostree container commit
