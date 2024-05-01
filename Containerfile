@@ -23,7 +23,7 @@ RUN mkdir -p /var/lib/alternatives && \
     cargo && \
     ostree container commit
 
-FROM ghcr.io/ublue-os/bazzite:stable AS facillinux-nvidia
+FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS facillinux-nvidia
 
 COPY build.sh /tmp/build.sh
 
