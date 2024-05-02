@@ -17,13 +17,13 @@ In addition to the packages included in [Bazzite](https://github.com/ublue-os/ba
 
 ## Using the Image
 
-If you do decide you want to try Pwn Linux, for AMD/Intel you will want to rebase from Fedora Kinoite using this command:
+If you do decide you want to try Pwn Linux, for AMD/Intel you will want to rebase from Fedora Kinoite/Bazzite using this command:
 
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/pwn-linux/pwn-linux/pwnlinux:latest
 ```
 
-For Nvidia you will want to rebase from Fedora Kinoite using this command:
+For Nvidia you will want to rebase from Fedora Kinoite/Bazzite using this command:
 
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/pwn-linux/pwnlinux-nvidia:latest
