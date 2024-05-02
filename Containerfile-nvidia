@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite:nvidia AS pwnlinux-nvidia
+FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 
 COPY build.sh /tmp/build.sh
 
