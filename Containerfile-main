@@ -20,5 +20,6 @@ RUN mkdir -p /var/lib/alternatives && \
     konsole \
     rust \
     pamixer \
+    playerctl \
     cargo && \
     ostree container commit
