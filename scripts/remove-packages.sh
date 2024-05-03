@@ -20,4 +20,4 @@ kmousetool \
 rom-properties-kf6 \
 protontricks \
 qsynth && \
-ostree container committ
+ostree container commit
