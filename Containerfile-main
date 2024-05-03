@@ -1,3 +1,5 @@
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
+
 FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux
 
 COPY system_files/desktop/kinoite /
@@ -31,5 +33,5 @@ RUN mkdir -p /var/lib/alternatives && \
     cargo && \
     ostree container commit
 
-RUN /usr/libexec/containerbuild/build-initramfs && \
+RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
     ostree container commit

@@ -32,5 +32,5 @@ RUN mkdir -p /var/lib/alternatives && \
     cargo && \
     ostree container commit
 
-RUN /usr/libexec/containerbuild/build-initramfs && \
+RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
     ostree container commit
