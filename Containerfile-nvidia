@@ -9,4 +9,5 @@ RUN mkdir -p /var/lib/alternatives && \
 /scripts/remove-packages.sh && \
 /scripts/install-packages.sh && \
 /scripts/remove-files.sh && \
+/scripts/cleanup.sh && \
 ostree container commit
