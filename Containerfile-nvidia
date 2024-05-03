@@ -1,12 +1,32 @@
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 
 COPY system_files/desktop/kinoite /
-OPY system_files/nvidia/kinoite /
+COPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
-COPY scripts /tmp/scripts
 
 RUN mkdir -p /var/lib/alternatives && \
-/tmp/scripts/remove-packages.sh && \
-/tmp/scripts/install-packages.sh && \
-/tmp/scripts/remove-files.sh && \
-ostree container commit
+    rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
+    ostree container commit && \
+    rpm-ostree override remove \
+    ptyxis \
+    discover-overlay \
+    input-remapper \
+    kde-connect-libs \
+    kdeconnectd \
+    kde-connect \
+    kcharselect \
+    krfb \
+    krfb-libs \
+    kmousetool \
+    rom-properties-kf6 \
+    protontricks \
+    qsynth && \
+    rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
+    ostree container commit && \
+    rpm-ostree install \
+    konsole \
+    rust \
+    pamixer \
+    playerctl \
+    cargo && \
+    ostree container commit
