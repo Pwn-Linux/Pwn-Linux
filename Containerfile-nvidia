@@ -3,11 +3,10 @@ FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 COPY system_files/desktop/kinoite /
 OPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
-COPY scripts /scripts
+COPY scripts /tmp/scripts
 
 RUN mkdir -p /var/lib/alternatives && \
-/scripts/remove-packages.sh && \
-/scripts/install-packages.sh && \
-/scripts/remove-files.sh && \
-/scripts/cleanup.sh && \
+/tmp/scripts/remove-packages.sh && \
+/tmp/scripts/install-packages.sh && \
+/tmp/scripts/remove-files.sh && \
 ostree container commit
