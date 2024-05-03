@@ -1,30 +1,9 @@
 FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux
 
-COPY build.sh /tmp/build.sh
+COPY system_files /
+COPY scripts /scripts
 
 RUN mkdir -p /var/lib/alternatives && \
-    rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
-    ostree container commit && \
-    rpm-ostree override remove \
-    ptyxis \
-    discover-overlay \
-    input-remapper \
-    kde-connect-libs \
-    kdeconnectd \
-    kde-connect \
-    kcharselect \
-    krfb \
-    krfb-libs \
-    kmousetool \
-    rom-properties-kf6 \
-    protontricks \
-    qsynth && \
-    rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
-    ostree container commit && \
-    rpm-ostree install \
-    konsole \
-    rust \
-    pamixer \
-    playerctl \
-    cargo && \
-    ostree container commit
+/scripts/remove-packages.sh && \
+/scripts/install-packages.sh && \
+ostree container commit
