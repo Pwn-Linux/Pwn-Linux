@@ -16,6 +16,7 @@ RUN mkdir -p /var/lib/alternatives && \
     kmousetool \
     rom-properties-kf6 \
     qsynth && \
+    rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
     ostree container commit && \
     rpm-ostree install \
     konsole \
