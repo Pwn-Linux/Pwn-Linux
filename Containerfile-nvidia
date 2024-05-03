@@ -1,6 +1,7 @@
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 
 COPY system_files/desktop/kinoite /
+COPY system_files/desktop/shared /
 COPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
 
