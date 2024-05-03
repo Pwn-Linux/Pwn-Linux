@@ -30,3 +30,6 @@ RUN mkdir -p /var/lib/alternatives && \
     playerctl \
     cargo && \
     ostree container commit
+
+RUN /usr/libexec/containerbuild/build-initramfs && \
+    ostree container commit
