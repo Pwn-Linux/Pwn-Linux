@@ -40,9 +40,12 @@ RUN rpm-ostree install \
     playerctl \
     cargo && \
 rpm-ostree install \
-    --from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
-        steamdeck-kde-presets-desktop  && \
+    steamdeck-kde-presets-desktop  && \
     ostree container commit
+
+# Disable Repo
+RUN sed -i 's@enabled=0@enabled=0@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+ostree container commit
 
 # Remove uneeded files
 RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
