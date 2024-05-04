@@ -132,12 +132,12 @@ jobs:
           mv ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM ${ISO_UPLOAD_DIR}
           echo "iso-upload-dir=${ISO_UPLOAD_DIR}" >> $GITHUB_OUTPUT
 
-      - name: Upload ISOs and Checksum to R2
+      - name: Upload ISOs to server
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
-        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          ftp_host: ${{ secrets.FTP_HOST }}
-          ftp_username: ${{ secrets.FTP_USER }}
-          ftp_password: ${{ secrets.FTP_PASS }}
-          local_source_dir: ${{ steps.upload-directory.outputs.iso-upload-dir }}
-          dist_target_dir: ${{ secrets.FTP_PATH }}
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ${{ steps.upload-directory.outputs.iso-upload-dir }}
+          server-dir: ${{ secrets.FTP_PATH }}
