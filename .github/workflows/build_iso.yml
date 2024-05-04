@@ -1,8 +1,8 @@
 name: Build ISOs
 
 on:
-  workflow_dispatch:
-  workflow_call:
+  schedule:
+    - cron: '30 10 * * *'  # 10:30am UTC everyday
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-iso
@@ -129,18 +129,6 @@ jobs:
           mv ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }} ${ISO_UPLOAD_DIR}
           mv ${{ steps.build.outputs.iso_path }}/${{ steps.build.outputs.iso_name }}-CHECKSUM ${ISO_UPLOAD_DIR}
           echo "iso-upload-dir=${ISO_UPLOAD_DIR}" >> $GITHUB_OUTPUT
-
-      - name: Upload ISOs and Checksum to Job Artifacts
-        if: github.ref_name == 'testing'
-        #if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ matrix.image_name }}-${{ steps.generate-tag.outputs.tag }}-${{ matrix.major_version}}
-          path: ${{ steps.upload-directory.outputs.iso-upload-dir }}
-          if-no-files-found: error
-          retention-days: 0
-          compression-level: 0
-          overwrite: true
 
       - name: Upload ISOs and Checksum to R2
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
