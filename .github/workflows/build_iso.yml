@@ -138,4 +138,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install ncftp
-          ncftpput -R -v -u "${{ variables.FTP_USER }}" -p "${{ variables.FTP_USER }}" ${{ variables.FTP_PASS }} ${{ variables.FTP_PATH }} ${{ steps.upload-directory.outputs.iso-upload-dir }}
+          ncftpput -R -v -u "$FTP_USER" -p "$FTP_USER" $FTP_PASS $FTP_PATH ${{ steps.upload-directory.outputs.iso-upload-dir }}
