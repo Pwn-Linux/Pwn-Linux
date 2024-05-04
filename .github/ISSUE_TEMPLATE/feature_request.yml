@@ -22,8 +22,8 @@ body:
       label: Image
       description: Which specific image do you want?
       options:
-        - AMD
-        - Nvidia
+        - Desktop AMD/Intel
+        - Desktop Nvidia
     validations:
       required: true
       
