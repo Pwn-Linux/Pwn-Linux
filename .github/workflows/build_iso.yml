@@ -135,7 +135,6 @@ jobs:
       - name: Upload ISOs and Checksum to R2
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
         shell: bash
-        env:
         run: |
           sudo apt-get update
           sudo apt-get install ncftp
