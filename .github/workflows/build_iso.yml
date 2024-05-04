@@ -136,4 +136,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install curl
-          curl -g -k -T ${{ steps.upload-directory.outputs.iso-upload-dir }}/${{ steps.build.outputs.iso_name }} ftps://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}${{ secrets.FTP_PATH}}
+          curl -g -k -T ${{ steps.upload-directory.outputs.iso-upload-dir }}/${{ steps.build.outputs.iso_name }} ftps://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}:21${{ secrets.FTP_PATH}}
