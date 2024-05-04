@@ -6,6 +6,7 @@ COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/overrides /
 
+# Remove uneeded packages
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
     ostree container commit && \
@@ -23,9 +24,10 @@ RUN mkdir -p /var/lib/alternatives && \
     rom-properties-kf6 \
     protontricks \
     qsynth && \
-    rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
-    ostree container commit && \
-    rpm-ostree install \
+    ostree container commit
+
+# Install new packages
+RUN rpm-ostree install \
     konsole \
     rust \
     pamixer \
@@ -33,5 +35,10 @@ RUN mkdir -p /var/lib/alternatives && \
     cargo && \
     ostree container commit
 
+# Remove uneeded files
+RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
+    ostree container commit
+
+# Update the initramfs
 RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
     ostree container commit
