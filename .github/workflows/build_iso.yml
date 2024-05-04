@@ -23,7 +23,7 @@ jobs:
         image_name:
           - pwnlinux
           - pwnlinux-nvidia
-        major_version: [40]
+        major_version: [ 40 ]
     steps:
 
       - name: Free Disk Space (Ubuntu)
@@ -134,8 +134,10 @@ jobs:
 
       - name: Upload ISOs and Checksum to R2
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install ncftp
-          ncftpput -R -v -u "$FTP_USER" -p "$FTP_USER" $FTP_PASS $FTP_PATH ${{ steps.upload-directory.outputs.iso-upload-dir }}
+        uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
+        with:
+          ftp_host: ${{ secrets.FTP_HOST }}
+          ftp_username: ${{ secrets.FTP_USER }}
+          ftp_password: ${{ secrets.FTP_PASS }}
+          local_source_dir: ${{ steps.upload-directory.outputs.iso-upload-dir }}
+          dist_target_dir: ${{ secrets.FTP_PATH }}
