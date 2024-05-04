@@ -1,9 +1,9 @@
 name: Build ISOs
 
 on:
+  workflow_dispatch:
+  workflow_call:
   schedule:
-    - workflow_dispatch:
-    - workflow_call:
     - cron: '30 10 * * *'  # 10:30am UTC everyday
 
 concurrency:
