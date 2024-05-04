@@ -137,4 +137,4 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update
-          ftp -u ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}${{ secrets.FTP_REMOTE_FOLDER }} ${{ steps.upload-directory.outputs.iso-upload-dir }}
+          ftp -u ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}${{ secrets.FTP_REMOTE_FOLDER }} ${{ steps.upload-directory.outputs.iso-upload-dir }}/${{ steps.build.outputs.iso_name }}
