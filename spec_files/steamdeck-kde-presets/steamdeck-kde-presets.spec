@@ -12,9 +12,8 @@ Source3:        metadata_vapor.json
 Source4:        metadata_vgui2.json
 BuildArch:      noarch
 Patch0:         fedora.patch
-Patch1:         kdeglobals.patch
-Patch2:         pwn-linux_logo.patch
-Patch3:         ublue.patch
+Patch1:         pwn-linux_logo.patch
+Patch2:         ublue.patch
 
 Requires:       kde-filesystem
 

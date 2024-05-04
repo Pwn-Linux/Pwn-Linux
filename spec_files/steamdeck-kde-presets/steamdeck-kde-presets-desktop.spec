@@ -8,12 +8,12 @@ URL:            https://github.com/ublue-os/bazzite
 Source0:        https://gitlab.com/evlaV/steamdeck-kde-presets/-/archive/master/steamdeck-kde-presets-master.tar.gz
 Source1:        kdeglobals-desktop
 Source2:        steamdeck-le.svg
-Source3:        bazzite_logo.svgz
+Source3:        pwn-linux_logo.svgz
 Source4:        metadata_vapor.json
 Source5:        metadata_vgui2.json
 Patch0:         multiuser.patch
 Patch1:         lockscreen.patch
-Patch2:         bazzite_logo.patch
+Patch2:         pwn-linux_logo.patch
 Patch3:         ublue.patch
 
 BuildArch:      noarch
