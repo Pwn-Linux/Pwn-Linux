@@ -139,5 +139,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          local-dir: ${{ steps.upload-directory.outputs.iso-upload-dir }}
+          local-dir: ${{ steps.upload-directory.outputs.iso-upload-dir }}/
           server-dir: ${{ secrets.FTP_PATH }}
