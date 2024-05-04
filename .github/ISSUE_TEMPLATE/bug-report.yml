@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report an issue about using Bazzite
+description: Report an issue about using Pwn Linux
 body:
   - type: markdown
     attributes:
