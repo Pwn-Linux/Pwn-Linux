@@ -132,10 +132,8 @@ jobs:
 
       - name: Upload ISOs to server
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
-        uses: bayssmekanique/action-simple-file-upload@v2
-        with:
-          user: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          host: ${{ secrets.FTP_HOST }}
-          src: /home/runner/work/Pwn-Linux/Pwn-Linux/upload/${{ steps.build.outputs.iso_name }}
-          dest: /web/releases/${{ steps.build.outputs.iso_name }}
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install curl
+          curl -g -k -T ${{ steps.upload-directory.outputs.iso-upload-dir }}/${{ steps.build.outputs.iso_name }} ftps://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}${{ secrets.FTP_PATH}}
