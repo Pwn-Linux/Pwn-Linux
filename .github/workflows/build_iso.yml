@@ -134,14 +134,7 @@ jobs:
 
       - name: Upload ISOs to server
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
-        uses: sand4rt/ftp-deployer@v1.8
-        with:
-          sftp: false
-          host: ${{ secrets.FTP_HOST }}
-          port: 21
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          remote_folder: ${{ secrets.FTP_REMOTE_FOLDER }}
-          local_folder: ${{ steps.upload-directory.outputs.iso-upload-dir }}/
-          cleanup: false
-          passive: true
+        shell: bash
+        run: |
+          sudo apt-get update
+          ftp -u ftp://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}${{ secrets.FTP_REMOTE_FOLDER }} ${{ steps.upload-directory.outputs.iso-upload-dir }}
