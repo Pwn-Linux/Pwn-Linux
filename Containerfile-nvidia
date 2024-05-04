@@ -5,6 +5,11 @@ COPY system_files/desktop/shared /
 COPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
 
+# Setup Repo
+RUN curl -Lo /etc/yum.repos.d/tohur-Pwn-fedora-40.repo https://copr.fedorainfracloud.org/coprs/tohur/Pwn/repo/fedora-40/tohur-Pwn-fedora-40.repo && \
+sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+ostree container commit
+
 # Remove uneeded packages
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
@@ -22,6 +27,7 @@ RUN mkdir -p /var/lib/alternatives && \
     kmousetool \
     rom-properties-kf6 \
     protontricks \
+    steamdeck-kde-presets-desktop \
     qsynth && \
     ostree container commit
 
@@ -32,6 +38,9 @@ RUN rpm-ostree install \
     pamixer \
     playerctl \
     cargo && \
+rpm-ostree install \
+    --from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
+        steamdeck-kde-presets-desktop  && \
     ostree container commit
 
 # Remove uneeded files
