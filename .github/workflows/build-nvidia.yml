@@ -3,12 +3,14 @@ name: build-pwnlinux-nvidia
 on:
   pull_request:
     branches:
+      - main
       - testing
       - unstable
   schedule:
     - cron: '05 10 * * *'  # 10:05am UTC everyday
   push:
     branches:
+      - main
       - testing
       - unstable
     paths-ignore:
