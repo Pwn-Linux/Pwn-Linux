@@ -32,7 +32,7 @@ rpm-ostree rebase ostree-unverified-registry:ghcr.io/pwn-linux/pwnlinux-nvidia:l
 
 Latest AMD/Intel ISO avilable at [Pwn Linux](https://pwn-linux.xyz/releases/pwnlinux/pwnlinux-stable.iso)
 
-Latest Nvidia ISO avilable at [Pwn Linux Nvidia](https://pwn-linux.xyz/releases/pwnlinux-nvidia/pwnlinux-nvidia.iso)
+Latest Nvidia ISO avilable at [Pwn Linux Nvidia](https://pwn-linux.xyz/releases/pwnlinux-nvidia/pwnlinux-nvidia-stable.iso)
 
 ## Verification
 
