@@ -1,9 +1,11 @@
-ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
-
-FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux
+ARG BASE_IMAGE
+ARG STAGE_NAME
+ARG COPY_NVIDIA_FILES
+FROM ${BASE_IMAGE}:stable AS ${STAGE_NAME}
 
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
+${COPY_NVIDIA_FILES}
 COPY system_files/overrides /
 
 # Setup Repo
