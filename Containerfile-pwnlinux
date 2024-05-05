@@ -19,9 +19,6 @@ RUN mkdir -p /var/lib/alternatives && \
     ptyxis \
     discover-overlay \
     input-remapper \
-    kde-connect-libs \
-    kdeconnectd \
-    kde-connect \
     kcharselect \
     krfb \
     krfb-libs \
