@@ -171,7 +171,7 @@ jobs:
             ${{ steps.generate-tags.outputs.alias_tags }}
           build-args: |
             BASE_IMAGE=${{ matrix.base_name == 'pwnlinux' && 'ghcr.io/ublue-os/bazzite' || 'ghcr.io/ublue-os/bazzite-nvidia' }}
-            STAGE_NAME=${{ matrix.base_name }}
+            STAGE_NAME=${{ matrix.base_name == 'pwnlinux' && 'pwnlinux' || 'pwnlinux-nvidia' }}
             COPY_NVIDIA_FILES=${{ matrix.base_name == 'pwnlinux-nvidia' && 'COPY system_files/nvidia/kinoite /' || '' }}
             IMAGE_NAME=${{ env.IMAGE_NAME }}
             IMAGE_FLAVOR=${{ env.IMAGE_FLAVOR }}
