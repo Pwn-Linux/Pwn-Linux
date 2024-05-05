@@ -132,8 +132,10 @@ jobs:
 
       - name: Upload ISOs to server
         if: github.event_name == 'workflow_dispatch' && github.ref_name == 'main'
-        shell: bash
-        run: |
-          sudo apt-get update
-          sudo apt-get install curl
-          curl -g -k -T ${{ steps.upload-directory.outputs.iso-upload-dir }}/${{ steps.build.outputs.iso_name }} ftps://${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}@${{ secrets.FTP_HOST }}:21${{ secrets.FTP_PATH}}
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ${{ steps.upload-directory.outputs.iso-upload-dir }}/
+          server-dir: ${{ secrets.FTP_PATH}}/${{ matrix.image_name }}/
