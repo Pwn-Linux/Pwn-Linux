@@ -1,12 +1,9 @@
 ARG BASE_IMAGE
 ARG STAGE_NAME
 ARG COPY_NVIDIA_FILES
+ENV STAGE_NAME $STAGE_NAME
 
-# Print out the values of build arguments for debugging
-RUN echo "BASE_IMAGE=${BASE_IMAGE}"
-RUN echo "STAGE_NAME=${STAGE_NAME}"
-RUN echo "COPY_NVIDIA_FILES=${COPY_NVIDIA_FILES}"
-FROM ${BASE_IMAGE}:stable AS $IMAGE_NAME
+FROM ${BASE_IMAGE}:stable AS $STAGE_NAME
 
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
