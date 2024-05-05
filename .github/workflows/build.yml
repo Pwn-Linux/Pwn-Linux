@@ -165,14 +165,11 @@ jobs:
         uses: redhat-actions/buildah-build@v2
         with:
           containerfiles: |
-            ./Containerfile
+            ./Containerfile-${{ matrix.base_name }}
           image: ${{ env.IMAGE_NAME }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
           build-args: |
-            BASE_IMAGE=${{ matrix.base_name == 'pwnlinux' && 'ghcr.io/ublue-os/bazzite' || 'ghcr.io/ublue-os/bazzite-nvidia' }}
-            STAGE_NAME=${{ matrix.base_name }}
-            COPY_NVIDIA_FILES=${{ matrix.base_name == 'pwnlinux-nvidia' && 'COPY system_files/nvidia/kinoite /' || '' }}
             IMAGE_NAME=${{ env.IMAGE_NAME }}
             IMAGE_FLAVOR=${{ env.IMAGE_FLAVOR }}
             IMAGE_VENDOR=${{ github.repository_owner }}

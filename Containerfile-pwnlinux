@@ -1,13 +1,7 @@
-ARG BASE_IMAGE
-ARG STAGE_NAME
-ARG COPY_NVIDIA_FILES
-ENV STAGE_NAME $STAGE_NAME
-
-FROM ${BASE_IMAGE}:stable AS $STAGE_NAME
+FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux
 
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
-${COPY_NVIDIA_FILES}
 COPY system_files/overrides /
 
 # Setup Repo
