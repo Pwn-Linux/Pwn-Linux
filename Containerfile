@@ -6,7 +6,7 @@ ARG COPY_NVIDIA_FILES
 RUN echo "BASE_IMAGE=${BASE_IMAGE}"
 RUN echo "STAGE_NAME=${STAGE_NAME}"
 RUN echo "COPY_NVIDIA_FILES=${COPY_NVIDIA_FILES}"
-FROM ${BASE_IMAGE}:stable AS ${STAGE_NAME}
+FROM ${BASE_IMAGE}:stable AS $IMAGE_NAME
 
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
