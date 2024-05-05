@@ -12,8 +12,8 @@ In addition to the packages included in [Bazzite](https://github.com/ublue-os/ba
 
 ### Package changes
 
-- Swap Puleaudio in for Pipewire-Puleaudio
-- removed various packeages in favor of using flatpak. See the Containerfiles for what is removed. will list them here later.
+- Swap Pulseaudio in for Pipewire-Pulseaudio
+- removed various packages in favor of using flatpak. See the Containerfiles for what is removed. will list them here later.
 
 ## Using the Image
 
@@ -28,6 +28,11 @@ For Nvidia you will want to rebase from Fedora Kinoite/Bazzite using this comman
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/pwn-linux/pwnlinux-nvidia:latest
 ```
+## ISO Downloads
+
+Latest AMD/Intel ISO avilable at [Pwn Linux](http://pwn-linux.xyz/releases/pwnlinux/pwnlinux-stable.iso)
+
+Latest Nvidia ISO avilable at [Pwn Linux Nvidia](http://pwn-linux.xyz/releases/pwnlinux-nvidia/pwnlinux-nvidia.iso)
 
 ## Verification
 
