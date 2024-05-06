@@ -10,10 +10,10 @@ screens:
       icon: "/usr/share/ublue-os/bazzite/logo.svg"
       description: |
         Configure your system to get started. This utility can be re-opened at any time, so don't feel like you have to get it perfect your first go-through.
-  configure-bazzite:
+  configure-pwnlinux:
     source: yafti.screen.package
     values:
-      title: Setting up Bazzite
+      title: Setting up Pwn Linux
       show_terminal: true
       package_manager: yafti.plugin.run
       groups:
@@ -228,12 +228,6 @@ screens:
       links:
       - "Install More Applications":
           run: /usr/bin/plasma-discover
-      - "Documentation":
-          run: /usr/bin/xdg-open https://universal-blue.discourse.group/docs?category=5
-      - "Forums":
-          run: /usr/bin/xdg-open https://universal-blue.discourse.group/c/bazzite/5
-      - "Join the Discord Community":
-          run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx
       - "Reboot now":
           run: systemctl reboot
       description: |
