@@ -49,4 +49,5 @@ RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop &
 
 # Update the initramfs
 RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
+    /usr/libexec/containerbuild/image-info && \
     ostree container commit
