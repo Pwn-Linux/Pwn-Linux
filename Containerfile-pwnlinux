@@ -55,6 +55,13 @@ rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
     ostree container commit
 
+#Install Tela Circle Icon theme
+RUN cd tmp && \
+    git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
+    cd Tela-circle-icon-theme && \
+    ./install.sh && \
+    ostree container commit
+
 # Disable Repo
 RUN sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
 ostree container commit
