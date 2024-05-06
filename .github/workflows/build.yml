@@ -45,7 +45,7 @@ jobs:
       matrix:
         base_image_flavor: [main]
         base_name: [pwnlinux, pwnlinux-nvidia]
-        base_image_name: [bazzite]
+        base_image_name: [bazzite, bazzite-nvidia]
         target_image_flavor: [main]
         fedora_version: [40]
         include:
