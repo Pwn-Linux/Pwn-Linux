@@ -56,7 +56,7 @@ rpm-ostree install \
     ostree container commit
 
 #Install Tela Circle Icon theme
-RUN cd tmp && \
+RUN cd /tmp && \
     git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
     cd Tela-circle-icon-theme && \
     ./install.sh && \
