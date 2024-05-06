@@ -7,7 +7,7 @@ ARG SOURCE_IMAGE="${SOURCE_IMAGE:-$BASE_IMAGE_NAME-$BASE_IMAGE_FLAVOR}"
 ARG BASE_IMAGE="ghcr.io/ublue-os/${SOURCE_IMAGE}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
-FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux
+FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux
 
 ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux}"
 ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
