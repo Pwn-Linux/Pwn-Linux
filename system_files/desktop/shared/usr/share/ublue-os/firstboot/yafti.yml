@@ -21,53 +21,63 @@ screens:
           description: Adds the input group to your current user. Required by certain controller drivers.
           default: true
           packages:
-          - Set input group: sudo -A ujust add-user-to-input-group
-        Install Game Mode Startup Video:
-          description: Adds a Bazzite themed startup video for Steam's game mode.
+            - Set input group: sudo -A ujust add-user-to-input-group
+        Install Big Picture Mode Startup Video:
+          description: Adds a Bazzite themed startup video for Steam's Big Picture Mode.
           default: true
           packages:
-          - Install Video: ujust install-gamemode-video
+            - Install Video: ujust install-gamemode-video
         Fix Steam Download Speed:
           description: Adds a config file that fixes download speed under Steam for Linux.
           default: true
           packages:
-          - Fix Download Speed: ujust fix-steam-download-speed
+            - Fix Download Speed: ujust fix-steam-download-speed
         Sunshine:
           description: A self-hosted game stream host for Moonlight
           default: false
           packages:
-          - Install Sunshine: ujust setup-sunshine install
-          - Autostart Sunshine: ujust setup-sunshine autostart
+            - Install Sunshine: ujust setup-sunshine install
+            - Autostart Sunshine: ujust setup-sunshine autostart
+        EmuDeck:
+          description: A utility for installing and configuring emulators.
+          default: false
+          packages:
+            - Retrieve EmuDeck: ujust install-emudeck
+        MullvadVPN:
+          description: A utility managing MullvadVPN.
+          default: false
+          packages:
+            - Retrieve MullvadVPN: rpm-ostree install https://cdn.mullvad.net/app/desktop/releases/2024.2/MullvadVPN-2024.2_x86_64.rpm
         OpenRazer:
           description: Enables additional capabilities for Razer Hardware
           default: false
           packages:
-          - Install OpenRazer: ujust install-openrazer
+            - Install OpenRazer: ujust install-openrazer
         OpenTabletDriver:
           description: Open source, cross-platform, user-mode tablet driver
           default: false
           packages:
-          - Install OpenTabletDriver: ujust install-opentabletdriver
+            - Install OpenTabletDriver: ujust install-opentabletdriver
         Oversteer:
           description: Application to control supported steering wheels
           default: false
           packages:
-          - Install Oversteer: ujust install-oversteer
+            - Install Oversteer: ujust install-oversteer
         Wootility:
           description: A configurator for Wooting keyboards
           default: false
           packages:
-          - Retrieve Wootility: ujust install-wootility
+            - Retrieve Wootility: ujust install-wootility
         Resilio Sync:
           description: A file synchronization utility powered by BitTorrent
           default: false
           packages:
-          - Install Resilio Sync: ujust install-resilio-sync
+            - Install Resilio Sync: ujust install-resilio-sync
         scrcpy:
           description: scrcpy provides display and control of Android devices connected on USB (or over TCP/IP)
           default: false
           packages:
-          - Install scrcpy: ujust install-scrcpy
+            - Install scrcpy: ujust install-scrcpy
   amd-additions:
     source: yafti.screen.package
     values:
@@ -103,132 +113,132 @@ screens:
           description: Additional browsers to complement Firefox
           default: false
           packages:
-          - Brave: com.brave.Browser
-          - Google Chrome: com.google.Chrome
-          - LibreWolf: io.gitlab.librewolf-community
-          - Microsoft Edge: com.microsoft.Edge
-          - Opera: com.opera.Opera
-          - Vivaldi: com.vivaldi.Vivaldi
+            - Brave: com.brave.Browser
+            - Google Chrome: com.google.Chrome
+            - LibreWolf: io.gitlab.librewolf-community
+            - Microsoft Edge: com.microsoft.Edge
+            - Opera: com.opera.Opera
+            - Vivaldi: com.vivaldi.Vivaldi
         Gaming:
           description: "Rock and Stone!"
           default: false
           packages:
-          - BoilR: io.github.philipk.boilr
-          - Bottles: com.usebottles.bottles
-          - Chiaki (PlayStation Remote Play): re.chiaki.Chiaki
-          - Discord: com.discordapp.Discord
-          - DOSBox Staging: io.github.dosbox-staging
-          - GeForce NOW Electron: io.github.hmlendea.geforcenow-electron
-          - Greenlight: io.github.unknownskl.greenlight
-          - Heroic Games Launcher (GOG &amp; Epic): com.heroicgameslauncher.hgl
-          - itch: io.itch.itch
-          - ludusavi (Game Save Backup): com.github.mtkennerly.ludusavi
-          - Minecraft (Prism Launcher): org.prismlauncher.PrismLauncher
-          - Minecraft Bedrock Launcher: io.mrarm.mcpelauncher
-          - Moonlight: com.moonlight_stream.Moonlight
-          - Mumble: info.mumble.Mumble
-          - OpenMW: org.openmw.OpenMW
-          - osu: sh.ppy.osu
-          - Parsec: com.parsecgaming.parsec
-          - Space Cadet Pinball: com.github.k4zmu2a.spacecadetpinball
-          - Sonic Robo Blast 2: org.srb2.SRB2
-          - Sonic Robo Blast 2 Kart: org.srb2.SRB2Kart
-          - Steam Link: com.valvesoftware.SteamLink
-          - SuperTux: org.supertuxproject.SuperTux
-          - SuperTuxKart: net.supertuxkart.SuperTuxKart
-          - TeamSpeak: com.teamspeak.TeamSpeak
-          - XIV Launcher (Final Fantasy XIV): dev.goats.xivlauncher
+            - BoilR: io.github.philipk.boilr
+            - Bottles: com.usebottles.bottles
+            - Chiaki (PlayStation Remote Play): re.chiaki.Chiaki
+            - Discord: com.discordapp.Discord
+            - DOSBox Staging: io.github.dosbox-staging
+            - GeForce NOW Electron: io.github.hmlendea.geforcenow-electron
+            - Greenlight: io.github.unknownskl.greenlight
+            - Heroic Games Launcher (GOG &amp; Epic): com.heroicgameslauncher.hgl
+            - itch: io.itch.itch
+            - ludusavi (Game Save Backup): com.github.mtkennerly.ludusavi
+            - Minecraft (Prism Launcher): org.prismlauncher.PrismLauncher
+            - Minecraft Bedrock Launcher: io.mrarm.mcpelauncher
+            - Moonlight: com.moonlight_stream.Moonlight
+            - Mumble: info.mumble.Mumble
+            - OpenMW: org.openmw.OpenMW
+            - osu: sh.ppy.osu
+            - Parsec: com.parsecgaming.parsec
+            - Space Cadet Pinball: com.github.k4zmu2a.spacecadetpinball
+            - Sonic Robo Blast 2: org.srb2.SRB2
+            - Sonic Robo Blast 2 Kart: org.srb2.SRB2Kart
+            - Steam Link: com.valvesoftware.SteamLink
+            - SuperTux: org.supertuxproject.SuperTux
+            - SuperTuxKart: net.supertuxkart.SuperTuxKart
+            - TeamSpeak: com.teamspeak.TeamSpeak
+            - XIV Launcher (Final Fantasy XIV): dev.goats.xivlauncher
         Emulation:
           description: Play games like it's 1972
           default: false
           packages:
-          - Cemu: info.cemu.Cemu
-          - Dolphin: org.DolphinEmu.dolphin-emu
-          - DuckStation: org.duckstation.DuckStation
-          - MAME: org.mamedev.MAME
-          - melonDS: net.kuribo64.melonDS
-          - mGBA: io.mgba.mGBA
-          - PCSX2: net.pcsx2.PCSX2
-          - Parallel Launcher: ca.parallel_launcher.ParallelLauncher
-          - Pegasus: org.pegasus_frontend.Pegasus
-          - PPSSPP: org.ppsspp.PPSSPP
-          - RetroArch: org.libretro.RetroArch
-          - RetroDECK: net.retrodeck.retrodeck
-          - Rosalie's Mupen GUI: com.github.Rosalie241.RMG
-          - RPCS3: net.rpcs3.RPCS3
-          - Ryujinx: org.ryujinx.Ryujinx
-          - ScummVM: org.scummvm.ScummVM
-          - Snes9x: com.snes9x.Snes9x
-          - Stella: io.github.stella_emu.Stella
-          - xemu: app.xemu.xemu
+            - Cemu: info.cemu.Cemu
+            - Dolphin: org.DolphinEmu.dolphin-emu
+            - DuckStation: org.duckstation.DuckStation
+            - MAME: org.mamedev.MAME
+            - melonDS: net.kuribo64.melonDS
+            - mGBA: io.mgba.mGBA
+            - PCSX2: net.pcsx2.PCSX2
+            - Parallel Launcher: ca.parallel_launcher.ParallelLauncher
+            - Pegasus: org.pegasus_frontend.Pegasus
+            - PPSSPP: org.ppsspp.PPSSPP
+            - RetroArch: org.libretro.RetroArch
+            - RetroDECK: net.retrodeck.retrodeck
+            - Rosalie's Mupen GUI: com.github.Rosalie241.RMG
+            - RPCS3: net.rpcs3.RPCS3
+            - Ryujinx: org.ryujinx.Ryujinx
+            - ScummVM: org.scummvm.ScummVM
+            - Snes9x: com.snes9x.Snes9x
+            - Stella: io.github.stella_emu.Stella
+            - xemu: app.xemu.xemu
         Streaming:
           description: Stream to the Internet
           default: false
           packages:
-          - OBS Studio: com.obsproject.Studio
-          - Boatswain for Streamdeck: com.feaneron.Boatswain
+            - OBS Studio: com.obsproject.Studio
+            - Boatswain for Streamdeck: com.feaneron.Boatswain
         Music:
           description: "Rock and Roll!"
           default: false
           packages:
-          - Cider (Apple Music Client): sh.cider.Cider
-          - Spotify: com.spotify.Client
-          - Strawberry Music Player: org.strawberrymusicplayer.strawberry
-          - Tidal-hifi: com.mastermindzh.tidal-hifi
+            - Cider (Apple Music Client): sh.cider.Cider
+            - Spotify: com.spotify.Client
+            - Strawberry Music Player: org.strawberrymusicplayer.strawberry
+            - Tidal-hifi: com.mastermindzh.tidal-hifi
         Office and Productivity:
           description: Bow to Capitalism
           default: false
           packages:
-          - Ardour: org.ardour.Ardour
-          - Blender: org.blender.Blender
-          - darktable: org.darktable.Darktable
-          - GIMP: org.gimp.GIMP
-          - Inkscape: org.inkscape.Inkscape
-          - Joplin: net.cozic.joplin_desktop
-          - Kdenlive: org.kde.kdenlive
-          - Krita: org.kde.krita
-          - LibreOffice: org.libreoffice.LibreOffice
-          - Obsidian: md.obsidian.Obsidian
-          - OnlyOffice: org.onlyoffice.desktopeditors
-          - Planify: io.github.alainm23.planify
-          - Slack: com.slack.Slack
-          - Standard Notes: org.standardnotes.standardnotes
-          - Tenacity: org.tenacityaudio.Tenacity
-          - Thunderbird Email: org.mozilla.Thunderbird
-          - Xournal++: com.github.xournalpp.xournalpp
+            - Ardour: org.ardour.Ardour
+            - Blender: org.blender.Blender
+            - darktable: org.darktable.Darktable
+            - GIMP: org.gimp.GIMP
+            - Inkscape: org.inkscape.Inkscape
+            - Joplin: net.cozic.joplin_desktop
+            - Kdenlive: org.kde.kdenlive
+            - Krita: org.kde.krita
+            - LibreOffice: org.libreoffice.LibreOffice
+            - Obsidian: md.obsidian.Obsidian
+            - OnlyOffice: org.onlyoffice.desktopeditors
+            - Planify: io.github.alainm23.planify
+            - Slack: com.slack.Slack
+            - Standard Notes: org.standardnotes.standardnotes
+            - Tenacity: org.tenacityaudio.Tenacity
+            - Thunderbird Email: org.mozilla.Thunderbird
+            - Xournal++: com.github.xournalpp.xournalpp
         Utilities and System Tools:
           description: Helpful tools
           default: false
           packages:
-          - AppImage Pool: io.github.prateekmedia.appimagepool
-          - Barrier: com.github.debauchee.barrier
-          - Bitwarden: com.bitwarden.desktop
-          - Calibre: com.calibre_ebook.calibre
-          - DejaDup: org.gnome.DejaDup
-          - Easy Effects: com.github.wwmm.easyeffects
-          - Fedora Media Writer: org.fedoraproject.MediaWriter
-          - Gradience: com.github.GradienceTeam.Gradience
-          - JamesDSP: me.timschneeberger.jdsp4linux
-          - KeePassXC: org.keepassxc.KeePassXC
-          - Metadata Cleaner: fr.romainvigier.MetadataCleaner
-          - OpenRGB: org.openrgb.OpenRGB
-          - Pika Backup: org.gnome.World.PikaBackup
-          - PinApp: io.github.fabrialberio.pinapp
-          - qBittorrent: org.qbittorrent.qBittorrent
-          - Resources: net.nokyan.Resources
-          - SaveDesktop: io.github.vikdevelop.SaveDesktop
-          - Solaar: io.github.pwr_solaar.solaar
-          - Syncthing: com.github.zocker_160.SyncThingy
-          - VLC: org.videolan.VLC
+            - AppImage Pool: io.github.prateekmedia.appimagepool
+            - Barrier: com.github.debauchee.barrier
+            - Bitwarden: com.bitwarden.desktop
+            - Calibre: com.calibre_ebook.calibre
+            - DejaDup: org.gnome.DejaDup
+            - Easy Effects: com.github.wwmm.easyeffects
+            - Fedora Media Writer: org.fedoraproject.MediaWriter
+            - Gradience: com.github.GradienceTeam.Gradience
+            - JamesDSP: me.timschneeberger.jdsp4linux
+            - KeePassXC: org.keepassxc.KeePassXC
+            - Metadata Cleaner: fr.romainvigier.MetadataCleaner
+            - OpenRGB: org.openrgb.OpenRGB
+            - Pika Backup: org.gnome.World.PikaBackup
+            - PinApp: io.github.fabrialberio.pinapp
+            - qBittorrent: org.qbittorrent.qBittorrent
+            - Resources: net.nokyan.Resources
+            - SaveDesktop: io.github.vikdevelop.SaveDesktop
+            - Solaar: io.github.pwr_solaar.solaar
+            - Syncthing: com.github.zocker_160.SyncThingy
+            - VLC: org.videolan.VLC
   final-screen:
     source: yafti.screen.title
     values:
       title: "All done!"
       icon: "/usr/share/ublue-os/bazzite/logo.svg"
       links:
-      - "Install More Applications":
-          run: /usr/bin/plasma-discover
-      - "Reboot now":
-          run: systemctl reboot
+        - "Install More Applications":
+            run: /usr/bin/plasma-discover
+        - "Reboot now":
+            run: systemctl reboot
       description: |
         Thank you for trying Pwn Linux. Please reboot to apply changes made by this setup utility.
