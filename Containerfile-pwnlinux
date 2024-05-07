@@ -28,8 +28,6 @@ ostree container commit
 
 # Remove uneeded packages
 RUN mkdir -p /var/lib/alternatives && \
-    rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
-    ostree container commit && \
     rpm-ostree override remove \
     ptyxis \
     discover-overlay \
@@ -46,7 +44,6 @@ RUN mkdir -p /var/lib/alternatives && \
 
 # Install new packages
 RUN rpm-ostree install \
-    pulseaudio-module-gsettings \
     konsole \
     rust \
     pamixer \
