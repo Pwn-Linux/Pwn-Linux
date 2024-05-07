@@ -49,6 +49,7 @@ RUN rpm-ostree install \
     rust \
     pamixer \
     playerctl \
+    samba \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
