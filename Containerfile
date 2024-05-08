@@ -20,17 +20,65 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/overrides /
-COPY scripts/setup.sh /tmp/setup.sh
-COPY scripts/remove-packages.sh /tmp/remove-packages.sh
-COPY scripts/install-packages.sh /tmp/install-packages.sh
-COPY scripts/remove-files.sh /tmp/remove-files.sh
-COPY scripts/finalize.sh /tmp/finalize.sh
 
-RUN /tmp/setup.sh && \
-        /tmp/remove-packages.sh && \
-        /tmp/install-packages.sh && \
-        /tmp/remove-files.sh && \
-        /tmp/finalize.sh
+# Setup Repo
+RUN curl -Lo /etc/yum.repos.d/tohur-Pwn-fedora-40.repo https://copr.fedorainfracloud.org/coprs/tohur/Pwn/repo/fedora-40/tohur-Pwn-fedora-40.repo && \
+sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+ostree container commit
+
+# Remove uneeded packages
+RUN mkdir -p /var/lib/alternatives && \
+    rpm-ostree override remove \
+    ptyxis \
+    discover-overlay \
+    input-remapper \
+    kcharselect \
+    krfb \
+    krfb-libs \
+    kmousetool \
+    rom-properties-kf6 \
+    protontricks \
+    steamdeck-kde-presets-desktop \
+    qsynth && \
+    ostree container commit
+
+# Install new packages
+RUN rpm-ostree install \
+    konsole \
+    rust \
+    pamixer \
+    playerctl \
+    samba \
+    cargo && \
+rpm-ostree install \
+    steamdeck-kde-presets-desktop  && \
+    ostree container commit
+
+#Install Tela Circle Icon theme
+RUN cd /tmp && \
+    git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
+    cd Tela-circle-icon-theme && \
+    ./install.sh && \
+    ostree container commit
+
+# Disable Repo
+RUN sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+ostree container commit
+
+# Remove uneeded files
+RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
+    rm /usr/share/applications/org.gnome.Prompt.desktop && \
+    ostree container commit
+
+# Update the initramfs
+RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
+    /usr/libexec/containerbuild/image-info && \
+    ostree container commit
+
+# Finalize the build
+RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
+    sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
+    ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 
@@ -46,14 +94,62 @@ COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
-COPY scripts/setup.sh /tmp/setup.sh
-COPY scripts/remove-packages.sh /tmp/remove-packages.sh
-COPY scripts/install-packages.sh /tmp/install-packages.sh
-COPY scripts/remove-files.sh /tmp/remove-files.sh
-COPY scripts/finalize.sh /tmp/finalize.sh
 
-RUN /tmp/setup.sh && \
-        /tmp/remove-packages.sh && \
-        /tmp/install-packages.sh && \
-        /tmp/remove-files.sh && \
-        /tmp/finalize.sh
+# Setup Repo
+RUN curl -Lo /etc/yum.repos.d/tohur-Pwn-fedora-40.repo https://copr.fedorainfracloud.org/coprs/tohur/Pwn/repo/fedora-40/tohur-Pwn-fedora-40.repo && \
+sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+ostree container commit
+
+# Remove uneeded packages
+RUN mkdir -p /var/lib/alternatives && \
+    rpm-ostree override remove \
+    ptyxis \
+    discover-overlay \
+    input-remapper \
+    kcharselect \
+    krfb \
+    krfb-libs \
+    kmousetool \
+    rom-properties-kf6 \
+    protontricks \
+    steamdeck-kde-presets-desktop \
+    qsynth && \
+    ostree container commit
+
+# Install new packages
+RUN rpm-ostree install \
+    konsole \
+    rust \
+    pamixer \
+    playerctl \
+    samba \
+    cargo && \
+rpm-ostree install \
+    steamdeck-kde-presets-desktop  && \
+    ostree container commit
+
+#Install Tela Circle Icon theme
+RUN cd /tmp && \
+    git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
+    cd Tela-circle-icon-theme && \
+    ./install.sh && \
+    ostree container commit
+
+# Disable Repo
+RUN sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+ostree container commit
+
+# Remove uneeded files
+RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
+    rm /usr/share/applications/org.gnome.Prompt.desktop && \
+    ostree container commit
+
+# Update the initramfs
+RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
+    /usr/libexec/containerbuild/image-info && \
+    ostree container commit
+
+# Finalize the build
+RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
+    sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
+    ostree container commit
