@@ -107,11 +107,6 @@ RUN mkdir -p /var/lib/alternatives && \
     pulseaudio-module-gsettings && \
     ostree container commit
 
-# Setup Repo
-RUN curl -Lo /etc/yum.repos.d/tohur-Pwn-fedora-40.repo https://copr.fedorainfracloud.org/coprs/tohur/Pwn/repo/fedora-40/tohur-Pwn-fedora-40.repo && \
-sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
-ostree container commit
-
 # Remove uneeded packages
 RUN rpm-ostree override remove \
     ptyxis \
@@ -266,11 +261,6 @@ RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree install \
     pulseaudio-module-gsettings && \
     ostree container commit
-
-# Setup Repo
-RUN curl -Lo /etc/yum.repos.d/tohur-Pwn-fedora-40.repo https://copr.fedorainfracloud.org/coprs/tohur/Pwn/repo/fedora-40/tohur-Pwn-fedora-40.repo && \
-sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
-ostree container commit
 
 # Remove uneeded packages
 RUN rpm-ostree override remove \
