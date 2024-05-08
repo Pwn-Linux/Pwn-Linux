@@ -28,7 +28,7 @@ For Nvidia you will want to rebase from Fedora Kinoite/Bazzite using this comman
 ```bash
 rpm-ostree rebase ostree-unverified-registry:ghcr.io/pwn-linux/pwnlinux-nvidia:latest
 ```
-## ISO Downloads
+## ISO Downloads (testing best to use Fedora Kinoite/Bazzite to install atm)
 
 Latest AMD/Intel ISO avilable at [Pwn Linux](https://pwn-linux.xyz/releases/pwnlinux/pwnlinux-stable.iso)
 
