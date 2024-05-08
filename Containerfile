@@ -80,6 +80,23 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
     ostree container commit
 
+FROM pwnlinux AS pwnlinux-pa
+
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-pa}"
+ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
+ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-main}"
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
+ARG IMAGE_BRANCH="${IMAGE_BRANCH:-main}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-bazzite}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
+
+RUN mkdir -p /var/lib/alternatives && \
+    rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
+    ostree container commit && \
+    rpm-ostree install \
+    pulseaudio-module-gsettings && \
+    ostree container commit
+
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 
 ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-nvidia}"
@@ -152,4 +169,21 @@ RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
 # Finalize the build
 RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
+    ostree container commit
+
+FROM pwnlinux-nvidia AS pwnlinux-nvidia-pa
+
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-nvidia-pa}"
+ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
+ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-nvidia}"
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
+ARG IMAGE_BRANCH="${IMAGE_BRANCH:-main}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-bazzite}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
+
+RUN mkdir -p /var/lib/alternatives && \
+    rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
+    ostree container commit && \
+    rpm-ostree install \
+    pulseaudio-module-gsettings && \
     ostree container commit
