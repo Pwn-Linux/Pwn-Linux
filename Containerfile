@@ -20,7 +20,11 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/overrides /
-COPY scripts /tmp
+COPY scripts/setup.sh /tmp/setup.sh
+COPY scripts/remove-packages.sh /tmp/remove-packages.sh
+COPY scripts/install-packages.sh /tmp/install-packages.sh
+COPY scripts/remove-files.sh /tmp/remove-files.sh
+COPY scripts/finalize.sh /tmp/finalize.sh
 
 RUN /tmp/setup.sh && \
         /tmp/remove-packages.sh && \
@@ -42,7 +46,11 @@ COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
-COPY scripts /tmp
+COPY scripts/setup.sh /tmp/setup.sh
+COPY scripts/remove-packages.sh /tmp/remove-packages.sh
+COPY scripts/install-packages.sh /tmp/install-packages.sh
+COPY scripts/remove-files.sh /tmp/remove-files.sh
+COPY scripts/finalize.sh /tmp/finalize.sh
 
 RUN /tmp/setup.sh && \
         /tmp/remove-packages.sh && \
