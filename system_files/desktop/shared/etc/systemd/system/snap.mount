@@ -1,0 +1,13 @@
+[Unit]
+After=mkdir-rootfs@snap.service
+Wants=mkdir-rootfs@snap.service
+Before=snapd.socket
+
+[Mount]
+What=/var/lib/snapd/snap
+Where=/snap
+Options=bind
+Type=none
+
+[Install]
+WantedBy=snapd.socket

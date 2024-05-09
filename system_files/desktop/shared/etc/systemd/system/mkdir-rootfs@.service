@@ -1,0 +1,9 @@
+[Unit]
+Description=Enable mount points in / for OSTree
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStartPre=chattr -i /
+ExecStart=/bin/sh -c "[ -L '%f' ] && rm '%f'; mkdir -p '%f'"
+ExecStopPost=chattr +i /
