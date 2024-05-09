@@ -1,0 +1,11 @@
+[Unit]
+Description=SDDM Theme fix
+
+[Mount]
+What=/var/sddm
+Where=/usr/share/sddm
+Options=bind
+Type=none
+
+[Install]
+WantedBy=multi-user.target
