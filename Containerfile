@@ -78,6 +78,7 @@ RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
 # Finalize the build
 RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
+    sed -i 's:/var/home:/home:' /etc/passwd && \
     ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
@@ -152,4 +153,5 @@ RUN KERNEL_FLAVOR=fsync /usr/libexec/containerbuild/build-initramfs && \
 # Finalize the build
 RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
+    sed -i 's:/var/home:/home:' /etc/passwd && \
     ostree container commit
