@@ -1,7 +1,7 @@
 name: Build Pwn Linux
 on:
   schedule:
-    - cron: '40 16 * * 1,2,3,4,5,6,7' # 16:40 utc eveyday
+    - cron: '40 16 * * *' # 16:40 utc eveyday
   pull_request:
     branches:
       - main
