@@ -34,6 +34,7 @@ RUN mkdir -p /var/lib/alternatives && \
     ptyxis \
     discover-overlay \
     input-remapper \
+    kdebugsettings \
     kcharselect \
     krfb \
     krfb-libs \
@@ -70,6 +71,8 @@ ostree container commit
 # Remove uneeded files
 RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
     rm /usr/share/applications/org.gnome.Prompt.desktop && \
+    rm /usr/share/applications/bazzite-documentation.desktop && \
+    rm /usr/share/applications/bazzite-landing.desktop && \
     ostree container commit
 
 # Update the initramfs
@@ -111,6 +114,7 @@ RUN mkdir -p /var/lib/alternatives && \
     ptyxis \
     discover-overlay \
     input-remapper \
+    kdebugsettings \
     kcharselect \
     krfb \
     krfb-libs \
@@ -147,6 +151,8 @@ ostree container commit
 # Remove uneeded files
 RUN rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
     rm /usr/share/applications/org.gnome.Prompt.desktop && \
+    rm /usr/share/applications/bazzite-documentation.desktop && \
+    rm /usr/share/applications/bazzite-landing.desktop && \
     ostree container commit
 
 # Update the initramfs
