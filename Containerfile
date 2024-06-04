@@ -47,7 +47,6 @@ RUN mkdir -p /var/lib/alternatives && \
 
 # Install new packages
 RUN rpm-ostree install \
-    konsole \
     rust \
     pamixer \
     playerctl \
@@ -127,7 +126,6 @@ RUN mkdir -p /var/lib/alternatives && \
 
 # Install new packages
 RUN rpm-ostree install \
-    konsole \
     rust \
     pamixer \
     playerctl \
