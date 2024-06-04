@@ -32,6 +32,7 @@ ostree container commit
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove \
     ptyxis \
+    konsole \
     discover-overlay \
     input-remapper \
     kdebugsettings \
@@ -111,6 +112,7 @@ ostree container commit
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove \
     ptyxis \
+    konsole \
     discover-overlay \
     input-remapper \
     kdebugsettings \
