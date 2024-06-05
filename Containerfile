@@ -57,6 +57,12 @@ rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
     ostree container commit
 
+#Remove Konsole
+RUN mkdir -p /var/lib/alternatives && \
+    rpm-ostree override remove \
+    konsole && \
+    ostree container commit
+
 #Install Tela Circle Icon theme
 RUN cd /tmp && \
     git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
@@ -112,7 +118,6 @@ ostree container commit
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove \
     ptyxis \
-    konsole \
     discover-overlay \
     input-remapper \
     kdebugsettings \
@@ -135,6 +140,12 @@ RUN rpm-ostree install \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
+    ostree container commit
+
+#Remove Konsole
+RUN mkdir -p /var/lib/alternatives && \
+    rpm-ostree override remove \
+    konsole && \
     ostree container commit
 
 #Install Tela Circle Icon theme
