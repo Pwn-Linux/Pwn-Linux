@@ -32,7 +32,6 @@ ostree container commit
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove \
     ptyxis \
-    konsole5 \
     discover-overlay \
     input-remapper \
     kdebugsettings \
@@ -56,11 +55,6 @@ RUN rpm-ostree install \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
-    ostree container commit
-
-#Remove Konsole
-RUN rpm-ostree override remove \
-    konsole && \
     ostree container commit
 
 #Install Tela Circle Icon theme
@@ -118,7 +112,6 @@ ostree container commit
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove \
     ptyxis \
-    konsole5 \
     discover-overlay \
     input-remapper \
     kdebugsettings \
@@ -142,11 +135,6 @@ RUN rpm-ostree install \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
-    ostree container commit
-
-#Remove Konsole
-RUN rpm-ostree override remove \
-    konsole && \
     ostree container commit
 
 #Install Tela Circle Icon theme
