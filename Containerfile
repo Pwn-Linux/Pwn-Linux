@@ -40,6 +40,7 @@ RUN mkdir -p /var/lib/alternatives && \
     krfb-libs \
     kmousetool \
     lutris \
+    steam \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
@@ -121,6 +122,7 @@ RUN mkdir -p /var/lib/alternatives && \
     krfb-libs \
     kmousetool \
     lutris \
+    steam \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
