@@ -1,0 +1,2 @@
+[Context]
+filesystems=~/.local/share/applications:create;~/.var/app/org.libretro.RetroArch;~/.steam;~/.local/share/Steam;
