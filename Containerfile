@@ -32,7 +32,6 @@ ostree container commit
 RUN mkdir -p /var/lib/alternatives && \
     rpm-ostree override remove \
     ptyxis \
-    konsole \
     discover-overlay \
     input-remapper \
     kdebugsettings \
@@ -49,6 +48,7 @@ RUN mkdir -p /var/lib/alternatives && \
 # Install new packages
 RUN rpm-ostree install \
     rust \
+    konsole \
     pamixer \
     playerctl \
     samba \
@@ -133,6 +133,7 @@ RUN mkdir -p /var/lib/alternatives && \
 # Install new packages
 RUN rpm-ostree install \
     rust \
+    konsole \
     pamixer \
     playerctl \
     samba \
