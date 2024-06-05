@@ -58,8 +58,7 @@ rpm-ostree install \
     ostree container commit
 
 #Remove Konsole
-RUN mkdir -p /var/lib/alternatives && \
-    rpm-ostree override remove \
+RUN rpm-ostree override remove \
     konsole && \
     ostree container commit
 
@@ -143,8 +142,7 @@ rpm-ostree install \
     ostree container commit
 
 #Remove Konsole
-RUN mkdir -p /var/lib/alternatives && \
-    rpm-ostree override remove \
+RUN rpm-ostree override remove \
     konsole && \
     ostree container commit
 
