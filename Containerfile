@@ -41,6 +41,11 @@ RUN mkdir -p /var/lib/alternatives && \
     kmousetool \
     lutris \
     steam \
+    wine-core.x86_64 \
+    wine-core.i686 \
+    wine-pulseaudio.x86_64 \
+    wine-pulseaudio.i686 \
+    winetricks \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
@@ -124,6 +129,11 @@ RUN mkdir -p /var/lib/alternatives && \
     kmousetool \
     lutris \
     steam \
+    wine-core.x86_64 \
+    wine-core.i686 \
+    wine-pulseaudio.x86_64 \
+    wine-pulseaudio.i686 \
+    winetricks \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
