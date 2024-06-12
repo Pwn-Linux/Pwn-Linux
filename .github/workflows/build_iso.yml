@@ -1,8 +1,6 @@
 name: Build ISOs
 
 on:
-  schedule:
-    - cron: '40 16 1,15 * *'
   workflow_dispatch:
   workflow_call:
 
