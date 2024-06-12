@@ -87,10 +87,10 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
     sed -i 's:/var/home:/home:' /etc/passwd && \
     sed -i '/<entry name="launchers" type="StringList">/,/<\/entry>/ s/<default>[^<]*<\/default>/<default>preferred:\/\/browser,applications:org.kde.discover.desktop,preferred:\/\/filemanager<\/default>/' /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml && \
-    touch /usr/bin/steam
-    echo '#!/bin/bash' >> /usr/bin/steam
-    echo 'flatpak run com.valvesoftware.Steam $@' >> /usr/bin/steam
-    chmod +x /usr/bin/steam
+    touch /usr/bin/steam && \
+    echo '#!/bin/bash' >> /usr/bin/steam && \
+    echo 'flatpak run com.valvesoftware.Steam $@' >> /usr/bin/steam && \
+    chmod +x /usr/bin/steam && \
     ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
@@ -174,8 +174,8 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
     sed -i 's:/var/home:/home:' /etc/passwd && \
     sed -i '/<entry name="launchers" type="StringList">/,/<\/entry>/ s/<default>[^<]*<\/default>/<default>preferred:\/\/browser,applications:org.kde.discover.desktop,preferred:\/\/filemanager<\/default>/' /usr/share/plasma/plasmoids/org.kde.plasma.taskmanager/contents/config/main.xml && \
-    touch /usr/bin/steam
-    echo '#!/bin/bash' >> /usr/bin/steam
-    echo 'flatpak run com.valvesoftware.Steam $@' >> /usr/bin/steam
-    chmod +x /usr/bin/steam
+    touch /usr/bin/steam && \
+    echo '#!/bin/bash' >> /usr/bin/steam && \
+    echo 'flatpak run com.valvesoftware.Steam $@' >> /usr/bin/steam && \
+    chmod +x /usr/bin/steam && \
     ostree container commit
