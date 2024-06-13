@@ -17,6 +17,8 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
    
     echo "Contents rsynced from /usr/share/sddm-fix to /var/sddm."
    else
-    echo "/var/sddm already exists. No action needed."
+   #  rsync the contents of /usr/share/sddm-fix to /var/sddm
+    rsync -avu "/usr/share/sddm-fix/" "/var/sddm"
+    echo "Contents rsynced and updated from /usr/share/sddm-fix to /var/sddm."
    fi 
  fi

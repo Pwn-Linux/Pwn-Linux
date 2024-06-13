@@ -1,1 +1,30 @@
 #!/usr/bin/bash
+IMAGE_INFO="/usr/share/ublue-os/image-info.json"
+IMAGE_NAME=$(jq -r '."image-name"' < $IMAGE_INFO)
+BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
+FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
+
+ 
+   # Check if $HOME/.themes exists
+   if [ ! -d "$HOME/.themes" ]; then
+    echo ".themes does not exist. Creating and copying contents from /usr/share/themes..."
+    
+    # Create the $HOME/.themes directory
+    mkdir -p $HOME/.themes
+    
+    #  rsync the contents of /usr/share/themes to $HOME/.themes
+    rsync -avu "/usr/share/themes/" "$HOME/.themes"
+   
+    echo "Contents rsynced from /usr/share/themes to .themes."
+   else
+   #  rsync the contents of  /usr/share/themes to .themes.
+    rsync -avu "/usr/share/themes/" "$HOME/.themes"
+    echo "Contents rsynced and updated from  /usr/share/themes to .themes."
+   fi 
+
+#Remove user Flathub
+flatpak remote-delete --user flathub
+
+if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
+
+ fi
