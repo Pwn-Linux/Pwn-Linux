@@ -7,15 +7,15 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
  if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
    # Check if /var/sddm exists
    if [ ! -d /var/sddm ]; then
-    echo "/var/sddm does not exist. Creating and copying contents from /usr/share/sddm..."
+    echo "/var/sddm does not exist. Creating and copying contents from /usr/share/sddm-fix..."
     
     # Create the /var/sddm directory
     mkdir -p /var/sddm
     
-    # Copy the contents of /usr/share/sddm-fix to /var/sddm
-    cp -r /usr/share/sddm-fix/* /var/sddm/
-    
-    echo "Contents copied from /usr/share/sddm-fix to /var/sddm."
+    #  rsync the contents of /usr/share/sddm-fix to /var/sddm
+    rsync -avu "/usr/share/sddm-fix/" "/var/sddm"
+   
+    echo "Contents rsynced from /usr/share/sddm-fix to /var/sddm."
    else
     echo "/var/sddm already exists. No action needed."
    fi 
