@@ -1,5 +1,6 @@
 [Unit]
 Description=SDDM Theme fix
+Before=graphical.target sddm.service
 
 [Mount]
 What=/var/sddm
@@ -8,4 +9,4 @@ Options=bind
 Type=none
 
 [Install]
-WantedBy=network-online.target
+WantedBy=multi-user.target
