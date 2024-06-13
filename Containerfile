@@ -96,8 +96,7 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     systemctl enable pwn-linux-initial-setup.service && \
     systemctl --global enable pwn-linux-user-setup.service && \
     mv /usr/share/sddm /usr/share/sddm-fix && \
-    mkdir /usr/share/sddm && \
-    systemctl enable sddm-fix.mount && \
+    ln -s /var/sddm /usr/share/sddm
     ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
@@ -190,6 +189,5 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     systemctl enable pwn-linux-initial-setup.service && \
     systemctl --global enable pwn-linux-user-setup.service && \
     mv /usr/share/sddm /usr/share/sddm-fix && \
-    mkdir /usr/share/sddm && \
-    systemctl enable sddm-fix.mount && \
+    ln -s /var/sddm /usr/share/sddm
     ostree container commit
