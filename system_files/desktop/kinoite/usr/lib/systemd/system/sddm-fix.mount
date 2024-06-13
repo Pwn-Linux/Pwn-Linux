@@ -1,5 +1,7 @@
 [Unit]
 Description=SDDM Theme fix
+Before=graphical.target sddm.service
+RequiresMountsFor=/var/sddm
 
 [Mount]
 What=/var/sddm
