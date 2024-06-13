@@ -1,2 +1,22 @@
 #!/usr/bin/bash
+IMAGE_INFO="/usr/share/ublue-os/image-info.json"
+IMAGE_NAME=$(jq -r '."image-name"' < $IMAGE_INFO)
+BASE_IMAGE_NAME=$(jq -r '."base-image-name"' < $IMAGE_INFO)
+FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
 
+ if [[ $BASE_IMAGE_NAME =~ "kinoite" ]]; then
+   # Check if /var/sddm exists
+   if [ ! -d /var/sddm ]; then
+    echo "/var/sddm does not exist. Creating and copying contents from /usr/share/sddm..."
+    
+    # Create the /var/sddm directory
+    mkdir -p /var/sddm
+    
+    # Copy the contents of /usr/share/sddm-fix to /var/sddm
+    cp -r /usr/share/sddm-fix/* /var/sddm/
+    
+    echo "Contents copied from /usr/share/sddm-fix to /var/sddm."
+   else
+    echo "/var/sddm already exists. No action needed."
+   fi 
+ fi
