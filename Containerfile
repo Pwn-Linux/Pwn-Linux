@@ -91,6 +91,8 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     echo '#!/bin/bash' >> /usr/bin/steam && \
     echo 'flatpak run com.valvesoftware.Steam $@' >> /usr/bin/steam && \
     chmod +x /usr/bin/steam && \
+    systemctl enable pwn-linux-initial-setup.service && \
+    systemctl --global enable pwn-linux-user-setup.service && \
     ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
@@ -178,4 +180,6 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     echo '#!/bin/bash' >> /usr/bin/steam && \
     echo 'flatpak run com.valvesoftware.Steam $@' >> /usr/bin/steam && \
     chmod +x /usr/bin/steam && \
+    systemctl enable pwn-linux-initial-setup.service && \
+    systemctl --global enable pwn-linux-user-setup.service && \
     ostree container commit

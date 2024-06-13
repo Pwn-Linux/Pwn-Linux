@@ -1,0 +1,9 @@
+[Unit]
+Description=Configure Pwn-Linux for current user
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/pwn-linux-user-setup
+
+[Install]
+WantedBy=default.target
