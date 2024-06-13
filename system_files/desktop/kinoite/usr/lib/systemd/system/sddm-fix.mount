@@ -8,4 +8,4 @@ Options=bind
 Type=none
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=network-online.target
