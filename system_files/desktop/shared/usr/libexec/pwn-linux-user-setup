@@ -35,7 +35,7 @@ else
   cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/global
   cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/com.valvesoftware.Steam
   cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/net.lutris.Lutris
-  touch$HOME/.config/pwn-linux-setup
+  touch $HOME/.config/pwn-linux-setup
 fi
 
 #if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
