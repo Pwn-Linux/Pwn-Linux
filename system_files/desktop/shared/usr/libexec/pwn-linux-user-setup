@@ -25,6 +25,6 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
 #Remove user Flathub
 flatpak remote-delete --user flathub
 
-if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
+#if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
 
- fi
+ #fi
