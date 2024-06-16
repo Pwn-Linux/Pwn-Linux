@@ -25,6 +25,19 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
 #Remove user Flathub
 flatpak remote-delete --user flathub
 
+# Check if the file exists
+if [ -f "$HOME/.config/pwn-linux-setup" ]; then
+    echo "File exists. No action needed."
+else
+    echo "File does not exist. Running commands..."
+    # Commands to run if the pwn-linux-setup file does not exist
+  cp /etc/skel/.config/no-show-user-motd $HOME/.config/no-show-user-motd
+  cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/global
+  cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/com.valvesoftware.Steam
+  cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/net.lutris.Lutris
+  touch$HOME/.config/pwn-linux-setup
+fi
+
 #if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
 
  #fi
