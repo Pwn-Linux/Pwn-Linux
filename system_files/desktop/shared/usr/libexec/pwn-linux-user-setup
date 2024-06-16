@@ -32,8 +32,8 @@ else
     echo "File does not exist. Running commands..."
     # Commands to run if the pwn-linux-setup file does not exist
   cp /etc/skel/.config/no-show-user-motd $HOME/.config/no-show-user-motd
-  cp /etc/skel/.config/gtk-3.0 $HOME/etc/skel/.config/gtk-3.0
-  cp /etc/skel/.config/gtk-4.0 $HOME/etc/skel/.config/gtk-4.0
+  cp -r /etc/skel/.config/gtk-3.0 $HOME/etc/skel/.config/gtk-3.0
+  cp - /etc/skel/.config/gtk-4.0 $HOME/etc/skel/.config/gtk-4.0
   cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/global
   cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/com.valvesoftware.Steam
   cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/net.lutris.Lutris
