@@ -53,6 +53,7 @@ RUN rpm-ostree install \
     konsole \
     pamixer \
     playerctl \
+    flatpak-builder \
     samba \
     cargo && \
 rpm-ostree install \
@@ -144,6 +145,7 @@ RUN mkdir -p /var/lib/alternatives && \
 RUN rpm-ostree install \
     rust \
     konsole \
+    flatpak-builder \
     pamixer \
     playerctl \
     samba \
