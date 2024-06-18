@@ -40,6 +40,6 @@ else
   touch $HOME/.config/pwn-linux-setup
 fi
 
-#if [[ $BASE_IMAGE_NAME =~ "bazzite" ]]; then
+#if [[ $BASE_IMAGE_NAME =~ "kinoite" ]]; then
 
  #fi
