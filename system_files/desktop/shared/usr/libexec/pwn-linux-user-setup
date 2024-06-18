@@ -31,12 +31,12 @@ if [ -f "$HOME/.config/pwn-linux-setup" ]; then
 else
     echo "File does not exist. Running commands..."
     # Commands to run if the pwn-linux-setup file does not exist
-  cp /etc/skel/.config/no-show-user-motd $HOME/.config/no-show-user-motd
-  rsync -avu "/etc/skel/.config/gtk-3.0/" "$HOME/.config/gtk-3.0"
-  rsync -avu "/etc/skel/.config/gtk-4.0/" "$HOME/.config/gtk-4.0"
-  cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/global
-  cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/com.valvesoftware.Steam
-  cp /etc/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/net.lutris.Lutris
+  cp /usr/share/pwn-linux/skel/.config/no-show-user-motd $HOME/.config/no-show-user-motd
+  rsync -avu "/usr/share/pwn-linux/skel/.config/gtk-3.0/" "$HOME/.config/gtk-3.0"
+  rsync -avu "/usr/share/pwn-linux/skel/.config/gtk-4.0/" "$HOME/.config/gtk-4.0"
+  cp /usr/share/pwn-linux/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/global
+  cp /usr/share/pwn-linux/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/com.valvesoftware.Steam
+  cp /usr/share/pwn-linux/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/net.lutris.Lutris
   touch $HOME/.config/pwn-linux-setup
 fi
 

@@ -96,7 +96,7 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     chmod +x /usr/libexec/pwn-linux-user-setup && \
     systemctl enable pwn-linux-initial-setup.service && \
     systemctl --global enable pwn-linux-user-setup.service && \
-    mv /usr/share/sddm /usr/share/sddm-fix && \
+    mv /usr/share/sddm /usr/share/pwn-linux/sddm && \
     ln -s /var/sddm /usr/share/sddm && \
     ostree container commit
 
@@ -190,6 +190,6 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     chmod +x /usr/libexec/pwn-linux-user-setup && \
     systemctl enable pwn-linux-initial-setup.service && \
     systemctl --global enable pwn-linux-user-setup.service && \
-    mv /usr/share/sddm /usr/share/sddm-fix && \
+    mv /usr/share/sddm /usr/share/pwn-linux/sddm && \
     ln -s /var/sddm /usr/share/sddm && \
     ostree container commit

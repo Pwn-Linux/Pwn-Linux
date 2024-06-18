@@ -7,18 +7,18 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
  if [[ $BASE_IMAGE_NAME =~ "kinoite" ]]; then
    # Check if /var/sddm exists
    if [ ! -d /var/sddm ]; then
-    echo "/var/sddm does not exist. Creating and copying contents from /usr/share/sddm-fix..."
+    echo "/var/sddm does not exist. Creating and copying contents from /usr/share/pwn-linux/sddm..."
     
     # Create the /var/sddm directory
     mkdir -p /var/sddm
     
     #  rsync the contents of /usr/share/sddm-fix to /var/sddm
-    rsync -avu "/usr/share/sddm-fix/" "/var/sddm"
+    rsync -avu "/usr/share/pwn-linux/sddm/" "/var/sddm"
    
-    echo "Contents rsynced from /usr/share/sddm-fix to /var/sddm."
+    echo "Contents rsynced from /usr/share/pwn-linux/sddm to /var/sddm."
    else
    #  rsync the contents of /usr/share/sddm-fix to /var/sddm
-    rsync -avu "/usr/share/sddm-fix/" "/var/sddm"
-    echo "Contents rsynced and updated from /usr/share/sddm-fix to /var/sddm."
+    rsync -avu "/usr/share/pwn-linux/sddm/" "/var/sddm"
+    echo "Contents rsynced and updated from /usr/share/pwn-linux/sddm to /var/sddm."
    fi 
  fi
