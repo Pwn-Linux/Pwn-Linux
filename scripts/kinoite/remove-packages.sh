@@ -8,6 +8,7 @@ rpm-ostree override remove \
     input-remapper \
     kate \
     kate-krunner-plugin \
+    kate-plugins \
     kwrite \
     kdebugsettings \
     kcharselect \
