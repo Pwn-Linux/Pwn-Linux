@@ -39,8 +39,6 @@ RUN mkdir -p /var/lib/alternatives && \
     krfb \
     krfb-libs \
     kmousetool \
-    konsole \
-    konsole-part \
     lutris \
     steam \
     fcitx5-mozc \
@@ -106,6 +104,9 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     systemctl --global enable pwn-linux-user-setup.service && \
     mv /usr/share/sddm /usr/share/pwn-linux/sddm && \
     ln -s /var/sddm /usr/share/sddm && \
+    rm /usr/share/applications/org.kde.konsole.desktop && \
+    rm /usr/bin/konsole && \
+    rm /usr/bin/konsoleprofile && \
     ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
@@ -141,8 +142,6 @@ RUN mkdir -p /var/lib/alternatives && \
     krfb \
     krfb-libs \
     kmousetool \
-    konsole \
-    konsole-part \
     lutris \
     steam \
     fcitx5-mozc \
@@ -208,4 +207,7 @@ RUN sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
     systemctl --global enable pwn-linux-user-setup.service && \
     mv /usr/share/sddm /usr/share/pwn-linux/sddm && \
     ln -s /var/sddm /usr/share/sddm && \
+    rm /usr/share/applications/org.kde.konsole.desktop && \
+    rm /usr/bin/konsole && \
+    rm /usr/bin/konsoleprofile && \
     ostree container commit
