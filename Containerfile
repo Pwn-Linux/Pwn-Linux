@@ -52,6 +52,7 @@ RUN mkdir -p /var/lib/alternatives && \
 RUN rpm-ostree install \
     rust \
     konsole \
+    gamemode \
     pamixer \
     playerctl \
     flatpak-builder \
@@ -147,6 +148,7 @@ RUN mkdir -p /var/lib/alternatives && \
 RUN rpm-ostree install \
     rust \
     konsole \
+    gamemode \
     flatpak-builder \
     pamixer \
     playerctl \
