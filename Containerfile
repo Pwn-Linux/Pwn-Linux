@@ -20,12 +20,12 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/overrides /
-COPY scripts/kinoite /tmp/scripts
+COPY scripts/kinoite /scripts
 
-RUN /tmp/scripts/prepare.sh && \
-    /tmp/scripts/remove-packages.sh && \
-    /tmp/scripts/install-packages.sh && \
-    /tmp/scripts/finalize.sh && \
+RUN /scripts/prepare.sh && \
+    /scripts/remove-packages.sh && \
+    /scripts/install-packages.sh && \
+    /scripts/finalize.sh && \
     ostree container commit
 
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
@@ -42,10 +42,10 @@ COPY system_files/desktop/kinoite /
 COPY system_files/desktop/shared /
 COPY system_files/nvidia/kinoite /
 COPY system_files/overrides /
-COPY scripts/kinoite /tmp/scripts
+COPY scripts/kinoite /scripts
 
-RUN /tmp/scripts/prepare.sh && \
-    /tmp/scripts/remove-packages.sh && \
-    /tmp/scripts/install-packages.sh && \
-    /tmp/scripts/finalize.sh && \
+RUN /scripts/prepare.sh && \
+    /scripts/remove-packages.sh && \
+    /scripts/install-packages.sh && \
+    /scripts/finalize.sh && \
     ostree container commit

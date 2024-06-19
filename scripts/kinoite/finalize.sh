@@ -37,3 +37,4 @@ rm /usr/share/applications/org.kde.konsole.desktop && \
 rm /usr/bin/konsole && \
 rm /usr/bin/konsoleprofile && \
 ostree container commit
+rm -vr /scripts
