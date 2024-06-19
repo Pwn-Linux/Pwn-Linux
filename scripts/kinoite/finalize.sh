@@ -54,9 +54,6 @@ ostree container commit
 rm /usr/share/applications/org.kde.konsole.desktop && \
 rm /usr/bin/konsole && \
 rm /usr/bin/konsoleprofile && \
-rm -r /usr/lib/.build-id/35 && \
-rm -r /usr/lib/.build-id/a8 && \
-rm -r /usr/lib/.build-id/e0 && \
 rm /usr/lib64/kconf_update_bin/konsole_globalaccel && \
 rm /usr/lib64/kconf_update_bin/konsole_show_menubar && \
 rm /usr/share/kconf_update/konsole.upd && \
