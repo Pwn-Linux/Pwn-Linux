@@ -40,6 +40,7 @@ RUN mkdir -p /var/lib/alternatives && \
     krfb-libs \
     kmousetool \
     konsole \
+    konsole5 \
     lutris \
     steam \
     fcitx5-mozc \
@@ -141,6 +142,7 @@ RUN mkdir -p /var/lib/alternatives && \
     krfb-libs \
     kmousetool \
     konsole \
+    konsole5 \
     lutris \
     steam \
     fcitx5-mozc \
