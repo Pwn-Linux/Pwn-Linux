@@ -6,6 +6,8 @@ rpm-ostree override remove \
     ptyxis \
     discover-overlay \
     input-remapper \
+    kate \
+    kwrite \
     kdebugsettings \
     kcharselect \
     krfb \
