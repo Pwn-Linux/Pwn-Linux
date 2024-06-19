@@ -43,6 +43,8 @@ RUN mkdir -p /var/lib/alternatives && \
     steam \
     fcitx5-mozc \
     fcitx5 \
+    fcitx5-data \
+    fcitx5-qt5 \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
@@ -140,6 +142,8 @@ RUN mkdir -p /var/lib/alternatives && \
     steam \
     fcitx5-mozc \
     fcitx5 \
+    fcitx5-data \
+    fcitx5-qt5 \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
