@@ -43,6 +43,11 @@ RUN mkdir -p /var/lib/alternatives && \
     steam \
     fcitx5-mozc \
     rom-properties-kf6 \
+    wine-core.x86_64 \
+    wine-core.i686 \
+    wine-pulseaudio.x86_64 \
+    wine-pulseaudio.i686 \
+    winetricks \
     protontricks \
     steamdeck-kde-presets-desktop \
     qsynth && \
@@ -138,6 +143,11 @@ RUN mkdir -p /var/lib/alternatives && \
     steam \
     fcitx5-mozc \
     rom-properties-kf6 \
+    wine-core.x86_64 \
+    wine-core.i686 \
+    wine-pulseaudio.x86_64 \
+    wine-pulseaudio.i686 \
+    winetricks \
     protontricks \
     steamdeck-kde-presets-desktop \
     qsynth && \
