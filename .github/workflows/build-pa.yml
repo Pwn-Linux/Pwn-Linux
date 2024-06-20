@@ -1,4 +1,4 @@
-name: Build Pwn Linux
+name: Build Pwn Linux Pulseaudio
 on:
   schedule:
     - cron: '40 16 * * *' # 16:40 utc eveyday
