@@ -47,7 +47,7 @@ screens:
           description: A utility managing MullvadVPN.
           default: false
           packages:
-            - Retrieve MullvadVPN: curl -Ls -o mullvad-vpn.rpm https://mullvad.net/en/download/app/rpm/latest && rpm-ostree install mullvad-vpn.rpm && rm mullvad-vpn.rpm
+            - Retrieve MullvadVPN: rpm-ostree install mullvad-vpn
         OpenRazer:
           description: Enables additional capabilities for Razer Hardware
           default: false
