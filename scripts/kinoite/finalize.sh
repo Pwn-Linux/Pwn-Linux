@@ -77,12 +77,5 @@ echo 'flatpak run --branch=stable --arch=x86_64 --command=konsole org.kde.konsol
 chmod +x /usr/bin/konsole && \
 ostree container commit
 
-#create kwrite flatpak wrapper
-touch /usr/bin/kwrite && \
-echo '#!/bin/bash' >> /usr/bin/kwrite && \
-echo 'flatpak run --branch=stable --arch=x86_64 --command=kwrite --file-forwarding org.kde.kwrite $@' >> /usr/bin/kwrite && \
-chmod +x /usr/bin/kwrite && \
-ostree container commit
-
 #remove build scripts
 rm -vr /scripts
