@@ -28,6 +28,28 @@ RUN /scripts/prepare.sh && \
     /scripts/finalize.sh && \
     ostree container commit
 
+FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux-pa
+
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-pa}"
+ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
+ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-main}"
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
+ARG IMAGE_BRANCH="${IMAGE_BRANCH:-main}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-kinoite}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
+
+COPY system_files/desktop/kinoite /
+COPY system_files/desktop/shared /
+COPY system_files/overrides /
+COPY scripts/kinoite /scripts
+
+RUN /scripts/prepare.sh && \
+    /scripts/remove-packages.sh && \
+    /scripts/remove-pipewire.sh && \
+    /scripts/install-packages.sh && \
+    /scripts/finalize.sh && \
+    ostree container commit
+
 FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia
 
 ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-nvidia}"
@@ -46,6 +68,29 @@ COPY scripts/kinoite /scripts
 
 RUN /scripts/prepare.sh && \
     /scripts/remove-packages.sh && \
+    /scripts/install-packages.sh && \
+    /scripts/finalize.sh && \
+    ostree container commit
+
+FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia-pa
+
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-nvidia-pa}"
+ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
+ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-nvidia}"
+ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
+ARG IMAGE_BRANCH="${IMAGE_BRANCH:-main}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-kinoite}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
+
+COPY system_files/desktop/kinoite /
+COPY system_files/desktop/shared /
+COPY system_files/nvidia/kinoite /
+COPY system_files/overrides /
+COPY scripts/kinoite /scripts
+
+RUN /scripts/prepare.sh && \
+    /scripts/remove-packages.sh && \
+    /scripts/remove-pipewire.sh && \
     /scripts/install-packages.sh && \
     /scripts/finalize.sh && \
     ostree container commit
