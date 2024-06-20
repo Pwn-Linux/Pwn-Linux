@@ -47,7 +47,7 @@ screens:
           description: A utility managing MullvadVPN.
           default: false
           packages:
-            - Retrieve MullvadVPN: rpm-ostree install mullvad-vpn
+            - Retrieve MullvadVPN: curl -Ls -o mullvad-vpn.rpm https://mullvad.net/en/download/app/rpm/latest && rpm-ostree install mullvad-vpn.rpm && rm mullvad-vpn.rpm
         OpenRazer:
           description: Enables additional capabilities for Razer Hardware
           default: false
@@ -88,6 +88,7 @@ screens:
       package_manager: yafti.plugin.run
       packages:
         - LACT (GPU Overclocking): ujust install-lact
+        - Hip, Hipblas and rocblas (AI Tools): rpm-ostree install flexiblas flexiblas-netlib flexiblas-openblas-openmp flexiblas-openblas-serial hipblas hipblas-devel openblas-openmp rocblas rocblas-devel rocm-comgr-devel rocm-hip-devel rocm-rpm-macros-modules rocm-runtime-devel rocsolver rocsparse
   nvidia-additions:
     source: yafti.screen.package
     values:
