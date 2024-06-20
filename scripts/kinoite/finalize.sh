@@ -58,7 +58,6 @@ rm /usr/lib64/kconf_update_bin/konsole_globalaccel && \
 rm /usr/lib64/kconf_update_bin/konsole_show_menubar && \
 rm /usr/share/kconf_update/konsole.upd && \
 rm /usr/share/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh && \
-rm /usr/share/kglobalaccel/org.kde.konsole.desktop && \
 rm /usr/share/knotifications6/konsole.notifyrc && \
 rm /usr/share/knsrcfiles/konsole.knsrc && \
 rm /usr/share/metainfo/org.kde.konsole.appdata.xml && \
