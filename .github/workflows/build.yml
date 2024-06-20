@@ -44,7 +44,7 @@ jobs:
       fail-fast: false
       matrix:
         base_image_flavor: [main]
-        base_name: [pwnlinux, pwnlinux-pa, pwnlinux-nvidia, pwnlinux-nvidia-pa]
+        base_name: [pwnlinux, pwnlinux-nvidia]
         base_image_name: [kinoite]
         target_image_flavor: [main]
         fedora_version: [40]
@@ -57,12 +57,6 @@ jobs:
       - name: Define env.IMAGE_FLAVOR
         run: |
           if [[ "${{ matrix.base_name }}" == "pwnlinux-nvidia" ]]; then
-              if [[ "${{ matrix.target_image_flavor }}" == "main" ]]; then
-                  echo "IMAGE_FLAVOR=nvidia" >> $GITHUB_ENV
-              else
-                  echo "IMAGE_FLAVOR=${{ format('{0}-{1}', matrix.target_image_flavor, 'nvidia') }}" >> $GITHUB_ENV
-              fi
-          elif [[ "${{ matrix.base_name }}" == "pwnlinux-nvidia-pa" ]]; then
               if [[ "${{ matrix.target_image_flavor }}" == "main" ]]; then
                   echo "IMAGE_FLAVOR=nvidia" >> $GITHUB_ENV
               else
