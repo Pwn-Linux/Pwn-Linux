@@ -3,6 +3,8 @@
 set -ouex pipefail
 
 rpm-ostree override remove \
+    ark \
+    ark-libs \
     ptyxis \
     discover-overlay \
     input-remapper \
