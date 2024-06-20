@@ -29,9 +29,9 @@ RUN /scripts/prepare.sh && \
     /scripts/finalize.sh && \
     ostree container commit
 
-FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-nvidia-pa
+FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-pa-nvidia
 
-ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-nvidia-pa}"
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-pa-nvidia}"
 ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
 ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-nvidia}"
 ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
