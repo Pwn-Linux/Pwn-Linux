@@ -2,5 +2,5 @@
 
 set -ouex pipefail
 
-rpm-ostree override remove piewire-pulseaudio --install pulseaudio && \
+rpm-ostree override remove pipewire-pulseaudio --install pulseaudio && \
 ostree container commit
