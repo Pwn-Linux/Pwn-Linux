@@ -12,7 +12,7 @@ beyond flatpak.
 
 ## Packages
 
-In addition to the packages included in [Bazzite](https://github.com/ublue-os/bazzite), I include the following installed/changed by default:
+In addition to the packages included in [Bazzite](https://github.com/ublue-os/bazzite), we include the following installed/changed by default:
 
 ### Package changes
 
