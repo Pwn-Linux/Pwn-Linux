@@ -4,7 +4,7 @@ set -ouex pipefail
 
 rpm-ostree install \
     rust \
-    konsole \
+    krdp \
     gamemode \
     pamixer \
     playerctl \
