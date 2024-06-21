@@ -6,7 +6,7 @@ Pwn Linux is a immutable gaming centric desktop built upon Fedora Atomic Desktop
 
 Pwn Linux features unparalleled out of the box configuration and integration of flatpak into the Desktop. 
 We are a flatpak first desktop focused distribution which is what sets us apart from Bazzite. We only
-use fedora system packages where we must for GUI apps and as soon as we can migrate a app to flatpak we
+use fedora system packages where we must or it makes more sense for GUI apps and as soon as we can migrate a app to flatpak we
 do. We also have support for distrobox, brew and snap (optional) so you can expand your sources of software
 beyond flatpak.
 
