@@ -4,15 +4,12 @@ set -ouex pipefail
 
 rpm-ostree install \
     rust \
-    krdp \
     gamemode \
     pamixer \
     playerctl \
     flatpak-builder \
     samba \
     cargo && \
-rpm-ostree install \
-    steamdeck-kde-presets-desktop  && \
 ostree container commit
 
 cd /tmp && \
