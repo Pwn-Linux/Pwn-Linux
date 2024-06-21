@@ -45,7 +45,7 @@ jobs:
       matrix:
         base_image_flavor: [main]
         base_name: [pwnlinux-pa, pwnlinux-pa-nvidia]
-        base_image_name: [kinoite]
+        base_image_name: [kinoite, silverblue]
         target_image_flavor: [main]
         fedora_version: [40]
         include:
