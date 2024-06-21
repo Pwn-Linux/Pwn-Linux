@@ -11,6 +11,7 @@ rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
 rm /usr/share/applications/org.gnome.Prompt.desktop && \
 rm /usr/share/applications/bazzite-documentation.desktop && \
 rm /usr/share/applications/bazzite-landing.desktop && \
+rm /usr/share/applications/org.kde.krdp.desktop && \
 ostree container commit
 
 # Update the initramfs
