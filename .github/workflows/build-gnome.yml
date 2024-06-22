@@ -1,4 +1,4 @@
-name: Build Pwn Linux
+name: Build Pwn Linux GNOME
 on:
   schedule:
     - cron: '40 16 * * *' # 16:40 utc eveyday
@@ -45,7 +45,7 @@ jobs:
       matrix:
         base_image_flavor: [main]
         base_name: [pwnlinux-gnome, pwnlinux-gnome-nvidia]
-        base_image_name: [kinoite, silverblue]
+        base_image_name: [silverblue]
         target_image_flavor: [main]
         fedora_version: [40]
         include:
