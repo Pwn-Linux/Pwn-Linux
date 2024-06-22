@@ -56,7 +56,7 @@ jobs:
     steps:
       - name: Define env.IMAGE_FLAVOR
         run: |
-          if [[ "${{ matrix.base_name }}" == "pwnlinux-nvidia" ]]; then
+          if [[ "${{ matrix.base_name }}" == "pwnlinux-gnome-nvidia" ]]; then
               if [[ "${{ matrix.target_image_flavor }}" == "main" ]]; then
                   echo "IMAGE_FLAVOR=nvidia" >> $GITHUB_ENV
               else
@@ -74,9 +74,9 @@ jobs:
           fi
 
           if [[ "${{ env.IMAGE_FLAVOR }}" == "main" ]]; then
-              echo "IMAGE_NAME=${{ format('{0}{1}', 'pwnlinux', '${DESKTOP}') }}" >> $GITHUB_ENV
+              echo "IMAGE_NAME=${{ format('{0}{1}', 'pwnlinux', 'gnome') }}" >> $GITHUB_ENV
             else
-              echo "IMAGE_NAME=${{ format('{0}{1}-{2}', 'pwnlinux', '${DESKTOP}', env.IMAGE_FLAVOR) }}" >> $GITHUB_ENV
+              echo "IMAGE_NAME=${{ format('{0}{1}-{2}', 'pwnlinux', 'gnome', env.IMAGE_FLAVOR) }}" >> $GITHUB_ENV
            fi
 
       # Checkout push-to-registry action GitHub repository
