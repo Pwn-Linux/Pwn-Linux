@@ -22,3 +22,8 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
     echo "Contents rsynced and updated from /usr/share/pwn-linux/sddm to /var/sddm."
    fi 
  fi
+
+flatpak remote-add --if-not-exists --system flathub /usr/etc/flatpak/remotes.d/flathub.flatpakrepo
+flatpak remote-modify --system --enable flathub
+flatpak remote-add --if-not-exists --system fedora oci+https://registry.fedoraproject.org
+flatpak remote-modify --system --enable fedora
