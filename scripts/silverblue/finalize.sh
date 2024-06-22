@@ -19,7 +19,7 @@ ostree container commit
 
 # Set os-release info
 sed -i 's/Fedora Linux/Pwn Linux/g' /usr/lib/os-release && \
-#sed -i 's/Bazzite/KDE Plasma/g' /usr/lib/os-release && \
+sed -i 's/Bazzite GNOME/GNOME/g' /usr/lib/os-release && \
 ostree container commit
 
 # Fix Passwaord
