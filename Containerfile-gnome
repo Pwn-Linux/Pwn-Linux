@@ -1,4 +1,4 @@
-ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-kinoite}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-silverblue}"
 ARG BASE_IMAGE_FLAVOR="${BASE_IMAGE_FLAVOR:-main}"
 ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-main}"
 ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
@@ -7,47 +7,46 @@ ARG SOURCE_IMAGE="${SOURCE_IMAGE:-$BASE_IMAGE_NAME-$BASE_IMAGE_FLAVOR}"
 ARG BASE_IMAGE="ghcr.io/ublue-os/${SOURCE_IMAGE}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
-FROM ghcr.io/ublue-os/bazzite:stable AS pwnlinux-pa
+FROM ghcr.io/ublue-os/bazzite-gnome:stable AS pwnlinux-gnome
 
-ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-pa}"
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-gnome}"
 ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
 ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-main}"
 ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
 ARG IMAGE_BRANCH="${IMAGE_BRANCH:-main}"
-ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-kinoite}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-silverblue}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
-COPY system_files/desktop/kinoite /
+COPY system_files/desktop/silverblue /
 COPY system_files/desktop/shared /
 COPY system_files/overrides /
-COPY scripts/kinoite /scripts
+COPY scripts/silverblue /scripts
 
 RUN /scripts/prepare.sh && \
     /scripts/remove-packages.sh && \
-    /scripts/remove-pipewire.sh && \
     /scripts/install-packages.sh && \
     /scripts/finalize.sh && \
     ostree container commit
 
-FROM ghcr.io/ublue-os/bazzite-nvidia:stable AS pwnlinux-pa-nvidia
+FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:stable AS pwnlinux-gnome-nvidia
 
-ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-pa-nvidia}"
+ARG IMAGE_NAME="${IMAGE_NAME:-pwnlinux-gnome-nvidia}"
 ARG IMAGE_VENDOR="${IMAGE_VENDOR:-pwn-linux}"
 ARG IMAGE_FLAVOR="${IMAGE_FLAVOR:-nvidia}"
 ARG KERNEL_FLAVOR="${KERNEL_FLAVOR:-fsync}"
 ARG IMAGE_BRANCH="${IMAGE_BRANCH:-main}"
-ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-kinoite}"
+ARG BASE_IMAGE_NAME="${BASE_IMAGE_NAME:-silverblue}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
-COPY system_files/desktop/kinoite /
+COPY system_files/desktop/silverblue /
 COPY system_files/desktop/shared /
-COPY system_files/nvidia/kinoite /
+COPY system_files/nvidia/silverblue /
+COPY system_files/nvidia/shared /
 COPY system_files/overrides /
-COPY scripts/kinoite /scripts
+COPY scripts/silverblue /scripts
 
 RUN /scripts/prepare.sh && \
     /scripts/remove-packages.sh && \
-    /scripts/remove-pipewire.sh && \
     /scripts/install-packages.sh && \
     /scripts/finalize.sh && \
     ostree container commit
