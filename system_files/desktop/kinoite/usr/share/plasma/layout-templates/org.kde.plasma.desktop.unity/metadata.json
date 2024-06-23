@@ -12,7 +12,7 @@
         "EnabledByDefault": true,
         "Id": "org.kde.plasma.desktop.unity",
         "License": "LGPLv2+",
-        "Name": "Cupertino top panel",
+        "Name": "Unity",
         "Website": "https://pwn-linux.org"
     },
     "X-Plasma-ContainmentCategories": [
