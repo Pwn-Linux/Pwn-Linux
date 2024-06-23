@@ -19,6 +19,8 @@ rpm-ostree install \
     libvala \
     libvala-devel \
     dbusmenu-qt \
+    libdbusmenu-gtk2 \
+    libdbusmenu-gtk3 \
     rust \
     krdp \
     gamemode \
@@ -43,11 +45,11 @@ cd /usr/share/plasma/plasmoids && \
 git clone https://github.com/dhruv8sh/plasma6-window-title-applet org.kde.windowtitle
 ostree container commit
 
-#Install appmenu-gtk-module
-cd /tmp && \
-git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu
-cd vala-panel-appmenu
-meson build subprojects/appmenu-gtk-module --prefix=/usr
-ninja -C build
-ninja install -C build
-ostree container commit
+##Install appmenu-gtk-module
+#cd /tmp && \
+#git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu
+#cd vala-panel-appmenu
+#meson build subprojects/appmenu-gtk-module --prefix=/usr
+#ninja -C build
+#ninja install -C build
+#ostree container commit
