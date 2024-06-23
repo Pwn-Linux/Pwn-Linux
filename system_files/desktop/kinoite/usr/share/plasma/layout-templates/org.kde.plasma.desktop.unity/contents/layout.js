@@ -1,15 +1,5 @@
-var plasma = getApiVersion(1)
-
-var activityId = activityIds[0]
-
-var activity = desktopById(activityId)
-//Remove desktop toolbox
-activity.currentConfigGroup = ["General"]
-activity.writeConfig("showToolbox", false)
-
-
 //Create top panel
-panel = new plasma.Panel
+panel = new Panel
 panel.location = "top"
 panel.alignment = "left"
 panel.height = gridUnit * 2
