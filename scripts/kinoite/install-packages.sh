@@ -31,13 +31,18 @@ rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
 ostree container commit
 
-#Install libdbusmenu from rpm
-rpm-ostree install https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40app1/x86_64/libdbusmenu-16.04.0-27.fc40app1.x86_64.rpm && \
+rpm-ostree override install \
+    libdbusmenu \
+    libdbusmenu-gtk3 && \
 ostree container commit
 
-#Install libdbusmenu-gtk3 from rpm
-rpm-ostree install https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40app1/x86_64/libdbusmenu-gtk3-16.04.0-27.fc40app1.x86_64.rpm && \
-ostree container commit
+##Install libdbusmenu from rpm
+#rpm-ostree override install https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40app1/x86_64/libdbusmenu-16.04.0-27.fc40app1.x86_64.rpm && \
+#ostree container commit
+#
+##Install libdbusmenu-gtk3 from rpm
+#rpm-ostree override install https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40app1/x86_64/libdbusmenu-gtk3-16.04.0-27.fc40app1.x86_64.rpm && \
+#ostree container commit
 
 #Install Tela Circle Icons
 cd /tmp && \
