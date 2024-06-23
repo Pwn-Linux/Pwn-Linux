@@ -41,13 +41,15 @@ cd Tela-circle-icon-theme && \
 ostree container commit
 
 #Install Window Title applet for macOS like layouts
-cd /usr/share/plasma/plasmoids && \
-git clone https://github.com/dhruv8sh/plasma6-window-title-applet org.kde.windowtitle && \
+cd /tmp && \
+git clone https://github.com/antroids/application-title-bar && \
+mv /tmp/application-title-bar/package /usr/share/plasma/plasmoids/com.github.antroids.application-title-bar && \
 ostree container commit
 
 #Install Plasma Control Hub applet for macOS like control hub
-cd /usr/share/plasma/plasmoids && \
-git clone https://github.com/zayronxio/Plasma-Control-Hub Plasma.Control.Hub && \
+cd /tmp && \
+git clone https://github.com/boraerciyas/kde_controlcentre && \
+mv /tmp/kde_controlcentre/package /usr/share/plasma/plasmoids/com.github.boraerciyas.controlcentre && \
 ostree container commit
 
 #Install Toggle Overview Widget
