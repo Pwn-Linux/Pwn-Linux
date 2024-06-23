@@ -3,8 +3,6 @@
 set -ouex pipefail
 
 rpm-ostree install \
-    dbusmenu-qt \
-    unity-gtk-module \
     rust \
     krdp \
     gamemode \
