@@ -10,6 +10,10 @@ rpm-ostree install \
     cmake \
     glib \
     glib-devel \
+    glib2 \
+    glib2-devel \
+    glibc \
+    glibc-devel \
     gtk2 \
     gtk2-devel \
     gtk3 \
@@ -18,6 +22,7 @@ rpm-ostree install \
     meson \
     libvala \
     libvala-devel \
+    libdbusmenu-gtk2
     rust \
     krdp \
     gamemode \
@@ -31,18 +36,17 @@ rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
 ostree container commit
 
-rpm-ostree install \
-    libdbusmenu \
-    libdbusmenu-gtk3 && \
+#Install libdbusmenu and libdbusmenu-gtk3 from rpm due to broken packaging in the repos
+cd /tmp && \
+mkdir libdbusmenu && \
+mkdir libdbusmenu-gtk3 && \
+wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-16.04.0-27.fc40.x86_64.rpm && \
+wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm && \
+rpm2cpio libdbusmenu-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu && cpio -idmv) && \
+rpm2cpio libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu-gtk3 && cpio -idmv) && \
+cp /tmp/libdbusmenu/usr/ /usr/ && \
+cp /tmp/libdbusmenu-gtk3/usr/ /usr/ && \
 ostree container commit
-
-##Install libdbusmenu from rpm
-#rpm-ostree override install https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40app1/x86_64/libdbusmenu-16.04.0-27.fc40app1.x86_64.rpm && \
-#ostree container commit
-#
-##Install libdbusmenu-gtk3 from rpm
-#rpm-ostree override install https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40app1/x86_64/libdbusmenu-gtk3-16.04.0-27.fc40app1.x86_64.rpm && \
-#ostree container commit
 
 #Install Tela Circle Icons
 cd /tmp && \
