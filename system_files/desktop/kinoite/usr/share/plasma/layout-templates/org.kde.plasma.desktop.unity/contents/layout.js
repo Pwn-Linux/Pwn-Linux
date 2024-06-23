@@ -2,6 +2,7 @@
 panel = new Panel
 panel.location = "top"
 panel.alignment = "left"
+panel.floating = false
 panel.height = gridUnit * 2
 
 //Add widgets to the top panel
@@ -30,6 +31,7 @@ uswitcher.writeConfig("showSett", true)
 
 var leftpanel = new Panel
 leftpanel.location = "left"
+leftpanel.floating = false
 leftpanel.height = gridUnit * 3.2
 leftpanel.offset=panel.height
 
