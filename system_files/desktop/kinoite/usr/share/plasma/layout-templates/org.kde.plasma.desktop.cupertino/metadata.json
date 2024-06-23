@@ -8,11 +8,11 @@
             }
         ],
         "Category": "",
-        "Description": "Panel containing the global menu applet",
+        "Description": "macOS like layout with global menu and a dock",
         "EnabledByDefault": true,
         "Id": "org.kde.plasma.desktop.cupertino",
         "License": "LGPLv2+",
-        "Name": "Cupertino top panel",
+        "Name": "Cupertino",
         "Website": "https://pwn-linux.org"
     },
     "X-Plasma-ContainmentCategories": [

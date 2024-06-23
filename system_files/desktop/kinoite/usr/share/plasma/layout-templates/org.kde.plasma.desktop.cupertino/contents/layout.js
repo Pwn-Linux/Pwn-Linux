@@ -53,3 +53,13 @@ if (langIds.indexOf(languageId) != -1) {
 
 panel.addWidget("org.kde.plasma.systemtray")
 panel.addWidget("org.kde.plasma.digitalclock")
+
+//Create "dock" panel
+var dockpanel = new Panel
+dockpanel.location = "bottom"
+panel.lengthMode = "fit";
+dockpanel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
+//Icontasks
+dockpanel.addWidget("org.kde.plasma.icontasks")
+//Trash
+dockpanel.addWidget("org.kde.plasma.trash")
