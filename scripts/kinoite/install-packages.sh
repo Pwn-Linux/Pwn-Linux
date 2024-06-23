@@ -15,8 +15,14 @@ rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
 ostree container commit
 
+#Install Tela Circle Icons
 cd /tmp && \
 git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
 cd Tela-circle-icon-theme && \
 ./install.sh && \
+ostree container commit
+
+#Install Window Title applet for macOS like layouts
+cd /usr/share/plasma/plasmoids && \
+git clone git:github.com/dhruv8sh/plasma6-window-title-applet.git plasma6-window-title-applet
 ostree container commit
