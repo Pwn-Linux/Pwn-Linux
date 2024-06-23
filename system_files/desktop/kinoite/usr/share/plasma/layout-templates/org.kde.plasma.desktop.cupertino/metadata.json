@@ -12,7 +12,7 @@
         "EnabledByDefault": true,
         "Id": "org.kde.plasma.desktop.cupertino",
         "License": "LGPLv2+",
-        "Name": "Application Menu Bar with added widgets for macOS like layout",
+        "Name": "Cupertino top panel",
         "Website": "https://pwn-linux.org"
     },
     "X-Plasma-ContainmentCategories": [
