@@ -47,7 +47,7 @@ ostree container commit
 cd /tmp && \
 git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu
 cd vala-panel-appmenu
-meson build vala-panel-appmenu/subprojects/appmenu-gtk-module --prefix=/usr
+meson build subprojects/appmenu-gtk-module --prefix=/usr
 ninja -C build
 ninja install -C build
 ostree container commit
