@@ -22,7 +22,7 @@ rpm-ostree install \
     meson \
     libvala \
     libvala-devel \
-    libdbusmenu-gtk2
+    libdbusmenu-gtk2 \
     rust \
     krdp \
     gamemode \
