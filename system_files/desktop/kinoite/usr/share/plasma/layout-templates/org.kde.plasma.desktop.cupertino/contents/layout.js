@@ -3,7 +3,7 @@ panel.location = "top";
 panel.height = Math.round(gridUnit * 1.5);
 
 panel.addWidget("org.kde.plasma.kickoff")
-panel.addWidget("org.kde.windowtitle")
+panel.addWidget("com.github.antroids.application-title-bar")
 panel.addWidget("org.kde.plasma.appmenu")
 panel.addWidget("org.kde.plasma.panelspacer")
 panel.addWidget("org.kde.plasma.marginsseparator")
