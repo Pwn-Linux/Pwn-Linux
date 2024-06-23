@@ -7,6 +7,10 @@ rpm-ostree override remove \
     ark-libs \
     ptyxis \
     discover-overlay \
+    plasma-discover \
+    plasma-discover-libs \
+    plasma-discover-notifier \
+    plasma-discover-flatpak \
     input-remapper \
     kdebugsettings \
     kcharselect \
