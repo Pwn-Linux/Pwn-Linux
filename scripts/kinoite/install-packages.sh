@@ -28,6 +28,9 @@ rpm-ostree install \
     playerctl \
     flatpak-builder \
     samba \
+    gnome-software \
+    gnome-software-fedora-langpacks \
+    gnome-software-rpm-ostree \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
