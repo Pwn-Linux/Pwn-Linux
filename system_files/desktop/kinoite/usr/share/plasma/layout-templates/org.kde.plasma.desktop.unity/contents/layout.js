@@ -30,11 +30,10 @@ panel.addWidget("org.kde.plasma.systemtray")
 //Clock
 panel.addWidget("org.kde.plasma.digitalclock")
 
-//USwitch https://store.kde.org/p/1194339/
-//var uswitcher= panel.addWidget("org.kde.plasma.uswitcher")
-//uswitcher.currentConfigGroup = ["Configuration", "General"]
-//uswitcher.writeConfig("showName", false)
-//uswitcher.writeConfig("showSett", true)
+var uswitcher= panel.addWidget("com.dv.uswitcher")
+uswitcher.currentConfigGroup = ["Configuration", "General"]
+uswitcher.writeConfig("showName", false)
+uswitcher.writeConfig("showSett", true)
 
 
 //Create left panel
@@ -52,9 +51,7 @@ menu.writeConfig("global", "Alt+F1")
 //Icontasks
 leftpanel.addWidget("org.kde.plasma.icontasks")
 //Present Windows Button https://store.kde.org/p/1181039/
-//var windows = leftpanel.addWidget("com.github.zren.presentwindows")
-//Toggle desktop grid
-//windows.currentConfigGroup = ["Configuration", "General"]
+var windows = leftpanel.addWidget("com.himdek.kde.plasma.overview")
 //windows.writeConfig("clickCommand","ShowDesktopGrid")
 //Trash
 leftpanel.addWidget("org.kde.plasma.trash")

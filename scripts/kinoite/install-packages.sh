@@ -42,5 +42,21 @@ ostree container commit
 
 #Install Window Title applet for macOS like layouts
 cd /usr/share/plasma/plasmoids && \
-git clone https://github.com/dhruv8sh/plasma6-window-title-applet org.kde.windowtitle
+git clone https://github.com/dhruv8sh/plasma6-window-title-applet org.kde.windowtitle && \
+ostree container commit
+
+#Install Plasma Control Hub applet for macOS like control hub
+cd /usr/share/plasma/plasmoids && \
+git clone https://github.com/zayronxio/Plasma-Control-Hub Plasma.Control.Hub && \
+ostree container commit
+
+#Install Toggle Overview Widget
+cd /usr/share/plasma/plasmoids && \
+git clone https://github.com/HimDek/Overview-Widget-for-Plasma com.himdek.kde.plasma.overview && \
+ostree container commit
+
+#Install Uswitch Widget
+cd /tmp && \
+git clone https://gitlab.com/divinae/uswitch && \
+mv /tmp/uswitch/package /usr/share/plasma/plasmoids/com.dv.uswitcher && \
 ostree container commit
