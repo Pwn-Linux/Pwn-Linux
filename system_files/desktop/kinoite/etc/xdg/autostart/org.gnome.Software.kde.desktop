@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=GNOME Software
+Exec=/usr/bin/gnome-software --gapplication-service
+Icon=system-software-update
+Type=Application
+NoDisplay=true
+X-KDE-autostart-phase=1
+OnlyShowIn=KDE
