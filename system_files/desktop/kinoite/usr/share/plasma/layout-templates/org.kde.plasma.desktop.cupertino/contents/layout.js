@@ -3,7 +3,9 @@ panel.location = "top";
 panel.height = Math.round(gridUnit * 1.5);
 
 panel.addWidget("org.kde.plasma.kickoff")
+panel.addWidget("org.kde.windowtitle")
 panel.addWidget("org.kde.plasma.appmenu")
+panel.addWidget("org.kde.plasma.panelspacer")
 panel.addWidget("org.kde.plasma.marginsseparator")
 
 /* Next up is determining whether to add the Input Method Panel
