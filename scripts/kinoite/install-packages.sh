@@ -19,7 +19,7 @@ rpm-ostree install \
     libvala \
     libvala-devel \
     dbusmenu-qt \
-    libdbusmenu-gtk2 \
+    libdbusmenu-gtk3 \
     rust \
     krdp \
     gamemode \
@@ -31,10 +31,6 @@ rpm-ostree install \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
-ostree container commit
-
-#Install libdbusmenu-gtk3 from rpm
-rpm-ostree install https://rpmfind.net/linux/fedora/linux/releases/40/Everything/x86_64/os/Packages/l/libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm && \
 ostree container commit
 
 #Install Tela Circle Icons
