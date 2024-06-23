@@ -44,8 +44,8 @@ wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x8
 wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm && \
 rpm2cpio libdbusmenu-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu && cpio -idmv) && \
 rpm2cpio libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu-gtk3 && cpio -idmv) && \
-cp /tmp/libdbusmenu/usr/ /usr/ && \
-cp /tmp/libdbusmenu-gtk3/usr/ /usr/ && \
+cp -r /tmp/libdbusmenu/usr/ /usr/ && \
+cp -r /tmp/libdbusmenu-gtk3/usr/ /usr/ && \
 ostree container commit
 
 #Install Tela Circle Icons
