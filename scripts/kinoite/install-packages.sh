@@ -31,7 +31,7 @@ rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
 ostree container commit
 
-rpm-ostree override install \
+rpm-ostree install \
     libdbusmenu \
     libdbusmenu-gtk3 && \
 ostree container commit
