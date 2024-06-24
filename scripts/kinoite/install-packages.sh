@@ -3,6 +3,7 @@
 set -ouex pipefail
 
 rpm-ostree install \
+    binutils \
     make \
     automake \
     gcc \
