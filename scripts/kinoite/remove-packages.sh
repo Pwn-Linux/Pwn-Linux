@@ -7,6 +7,7 @@ rpm-ostree override remove \
     ark-libs \
     ptyxis \
     discover-overlay \
+    filelight \
     plasma-discover \
     plasma-discover-libs \
     plasma-discover-notifier \
@@ -14,9 +15,11 @@ rpm-ostree override remove \
     input-remapper \
     kdebugsettings \
     kcharselect \
+    kfind\
     krfb \
     krfb-libs \
     kmousetool \
+    kwrite \
     lutris \
     steam \
     fcitx5-mozc \
