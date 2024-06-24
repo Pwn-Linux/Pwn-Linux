@@ -81,5 +81,9 @@ echo 'flatpak run --branch=stable --arch=x86_64 --command=konsole org.kde.konsol
 chmod +x /usr/bin/konsole && \
 ostree container commit
 
+#setup bind mount of /var/mnt to /mnt
+rm /mnt && \
+systemctl enable mnt.mount && \
+ostree container commit
 #remove build scripts
 rm -vr /scripts

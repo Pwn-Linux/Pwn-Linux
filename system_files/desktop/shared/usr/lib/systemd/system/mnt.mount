@@ -1,0 +1,12 @@
+[Unit]
+Before=basic.target
+After=local-fs.target sysinit.target
+
+[Mount]
+What=/var/mnt
+Where=/mnt
+Options=bind
+Type=none
+
+[Install]
+WantedBy=basic.target
