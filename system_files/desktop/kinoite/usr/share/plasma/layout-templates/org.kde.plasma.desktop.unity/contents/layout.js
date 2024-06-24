@@ -3,7 +3,6 @@ panel = new Panel
 panel.location = "left"
 panel.floating = false
 panel.height = gridUnit * 3.2
-panel.offset=toppanel.height
 //Add widgets to the left panel
 var menu = panel.addWidget("org.kde.plasma.kickerdash")
 //Add default shortcut to the kickerdash menu
@@ -24,7 +23,7 @@ toppanel.location = "top"
 toppanel.alignment = "left"
 toppanel.floating = false
 toppanel.height = gridUnit * 2
-
+toppanel.offset=panel.height
 //Add widgets to the top panel
 
 var spacer = toppanel.addWidget("org.kde.plasma.panelspacer")
