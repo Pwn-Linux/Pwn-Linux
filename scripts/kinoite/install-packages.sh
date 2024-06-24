@@ -26,6 +26,8 @@ rpm-ostree install \
     pamixer \
     playerctl \
     flatpak-builder \
+    plasma-workspace-x11 \
+    kwin-x11 \
     samba \
     cargo && \
 rpm-ostree install \

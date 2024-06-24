@@ -1,7 +1,7 @@
 [Unit]
+Before=basic.target
 After=mkdir-rootfs@home-mnt.service
 Wants=mkdir-rootfs@home-mnt.service
-Before=basic.target
 
 [Mount]
 What=/var/home
