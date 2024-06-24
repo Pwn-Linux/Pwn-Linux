@@ -18,9 +18,6 @@ rpm-ostree install \
     appmenu-gtk3-module \
     appmenu-gtk2-module \
     applet-window-buttons \
-    applet-window-title \
-    lightly-qt5 \
-    lightly-qt6 \
     rust \
     krdp \
     gamemode \
@@ -59,6 +56,11 @@ cd /tmp && \
 git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
 cd Tela-circle-icon-theme && \
 ./install.sh && \
+ostree container commit
+
+#Install Window Title applet for macOS like layouts
+cd /usr/share/plasma/plasmoids && \
+git clone https://github.com/dhruv8sh/plasma6-window-title-applet org.kde.windowtitle
 ostree container commit
 
 #Install Plasma Control Hub applet for macOS like control hub
