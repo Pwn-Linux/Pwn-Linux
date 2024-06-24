@@ -40,10 +40,6 @@ panels.
 %install
 mkdir -p %{buildroot}%{_datadir}/plasma/plasmoids/%{applet_id}/
 cp -r contents %{buildroot}%{_datadir}/plasma/plasmoids/%{applet_id}/
-install -Dm644 metadata.desktop %{buildroot}%{_datadir}/plasma/plasmoids/%{applet_id}/
-
-%check
-desktop-file-validate %{buildroot}%{_datadir}/plasma/plasmoids/%{applet_id}/metadata.desktop
 
 %changelog
 * Wed Jun 19 2024 Dipta Biswas <dabiswas112@gmail.com> - 0.9.6-1
