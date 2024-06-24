@@ -1,6 +1,7 @@
 [Unit]
 Before=basic.target
-After=local-fs.target sysinit.target
+After=mkdir-rootfs@mnt.service
+Wants=mkdir-rootfs@mnt.service
 
 [Mount]
 What=/var/mnt
