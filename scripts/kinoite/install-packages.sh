@@ -19,6 +19,8 @@ rpm-ostree install \
     appmenu-gtk2-module \
     applet-window-buttons \
     applet-window-title \
+    lightly-qt5 \
+    lightly-qt6 \
     rust \
     krdp \
     gamemode \
