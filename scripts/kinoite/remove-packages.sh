@@ -8,6 +8,7 @@ rpm-ostree override remove \
     ptyxis \
     discover-overlay \
     filelight \
+    firewall-config \
     plasma-discover \
     plasma-discover-libs \
     plasma-discover-notifier \
