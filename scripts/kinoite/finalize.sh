@@ -85,5 +85,11 @@ ostree container commit
 rm /mnt && \
 systemctl enable mnt.mount && \
 ostree container commit
+
+#setup bind mount of /var/mnt to /mnt
+rm /home && \
+systemctl enable home-mnt.mount && \
+ostree container commit
+
 #remove build scripts
 rm -vr /scripts

@@ -1,0 +1,13 @@
+[Unit]
+After=mkdir-rootfs@home-mnt.service
+Wants=mkdir-rootfs@home-mnt.service
+Before=basic.target
+
+[Mount]
+What=/var/home
+Where=/home
+Options=bind
+Type=none
+
+[Install]
+WantedBy=basic.target
