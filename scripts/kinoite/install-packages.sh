@@ -4,6 +4,8 @@ set -ouex pipefail
 
 rpm-ostree install \
     binutils \
+    binutils-devel \
+    binutils-gold \
     make \
     automake \
     gcc \
@@ -58,13 +60,28 @@ cp -r /tmp/libdbusmenu-gtk3/usr/ /usr/ && \
 cp -r /tmp/libdbusmenu-gtk3-devel/usr/ /usr/ && \
 ostree container commit
 
-#Install appmenu-gtk-module
+#Install appmenu-gtk-module from rpm
 cd /tmp && \
-git clone https://gitlab.com/vala-panel-project/vala-panel-appmenu && \
-cd vala-panel-appmenu && \
-meson build subprojects/appmenu-gtk-module --prefix=/usr && \
-ninja -C build && \
-ninja install -C build && \
+mkdir appmenu-gtk-module-common && \
+mkdir appmenu-gtk2-module && \
+mkdir libappmenu-gtk2-parser0 && \
+mkdir appmenu-gtk3-module && \
+mkdir libappmenu-gtk3-parser0 && \
+wget https://www.rpmfind.net/linux/opensuse/tumbleweed/repo/oss/noarch/appmenu-gtk-module-common-0.7.6-3.3.noarch.rpm && \
+wget https://www.rpmfind.net/linux/opensuse/tumbleweed/repo/oss/x86_64/appmenu-gtk2-module-0.7.6-3.3.x86_64.rpm && \
+wget https://www.rpmfind.net/linux/opensuse/tumbleweed/repo/oss/x86_64/libappmenu-gtk2-parser0-0.7.6-3.3.x86_64.rpm && \
+wget https://www.rpmfind.net/linux/opensuse/tumbleweed/repo/oss/x86_64/appmenu-gtk3-module-0.7.6-3.3.x86_64.rpm && \
+wget https://www.rpmfind.net/linux/opensuse/tumbleweed/repo/oss/x86_64/libappmenu-gtk3-parser0-0.7.6-3.3.x86_64.rpm && \
+rpm2cpio appmenu-gtk-module-common-0.7.6-3.3.noarch.rpm | (cd appmenu-gtk-module-common && cpio -idmv) && \
+rpm2cpio appmenu-gtk2-module-0.7.6-3.3.x86_64.rpm | (cd appmenu-gtk2-module && cpio -idmv) && \
+rpm2cpio libappmenu-gtk2-parser0-0.7.6-3.3.x86_64.rpm | (cd libappmenu-gtk2-parser0 && cpio -idmv) && \
+rpm2cpio appmenu-gtk3-module-0.7.6-3.3.x86_64.rpm | (cd appmenu-gtk3-module && cpio -idmv) && \
+rpm2cpio libappmenu-gtk3-parser0-0.7.6-3.3.x86_64.rpm | (cd libappmenu-gtk3-parser0 && cpio -idmv) && \
+cp -r /tmp/appmenu-gtk-module-common/usr/ /usr/ && \
+cp -r /tmp/appmenu-gtk2-module/usr/ /usr/ && \
+cp -r /tmp/libappmenu-gtk2-parser0/usr/ /usr/ && \
+cp -r /tmp/appmenu-gtk3-module/usr/ /usr/ && \
+cp -r /tmp/libappmenu-gtk3-parser0/usr/ /usr/ && \
 ostree container commit
 
 #Install Tela Circle Icons
