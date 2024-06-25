@@ -28,6 +28,7 @@ rpm-ostree install \
     flatpak-builder \
     plasma-workspace-x11 \
     kwin-x11 \
+    sddm-x11 \
     samba \
     cargo && \
 rpm-ostree install \
