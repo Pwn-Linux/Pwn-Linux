@@ -26,13 +26,14 @@ rpm-ostree install \
     pamixer \
     playerctl \
     flatpak-builder \
-    plasma-workspace-x11 \
-    kwin-x11 \
-    sddm-x11 \
     samba \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
+rpm-ostree override remove \
+    colord-kde && \
+rpm-ostree install \
+    plasma-workspace-x11 && \
 ostree container commit
 
 #Install libdbusmenu and libdbusmenu-gtk3 from rpm due to broken packaging in the repos

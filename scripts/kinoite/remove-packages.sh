@@ -34,7 +34,5 @@ rpm-ostree override remove \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
-    sddm-wayland-plasma \
-    sddm-wayland-generic \
     qsynth && \
 ostree container commit
