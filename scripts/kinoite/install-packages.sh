@@ -30,12 +30,10 @@ rpm-ostree install \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
-rpm-ostree override remove \
-    colord-kde && \
-rpm-ostree install \
-    plasma-workspace-x11 \
-    xorg-x11-drv-amdgpu \
-    xorg-x11-drv-intel && \
+#rpm-ostree install \
+#    plasma-workspace-x11 \
+#    xorg-x11-drv-amdgpu \
+#    xorg-x11-drv-intel && \
 ostree container commit
 
 #Install libdbusmenu and libdbusmenu-gtk3 from rpm due to broken packaging in the repos
