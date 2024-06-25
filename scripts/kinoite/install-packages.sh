@@ -13,6 +13,7 @@ rpm-ostree install \
     cmake \
     vala \
     meson \
+    glib2-devel \
     dbusmenu-qt \
     libdbusmenu-gtk2 \
     libdbusmenu-gtk2-devel \
@@ -85,4 +86,18 @@ ostree container commit
 cd /tmp && \
 git clone https://gitlab.com/divinae/uswitch && \
 mv /tmp/uswitch/package /usr/share/plasma/plasmoids/com.dv.uswitcher && \
+ostree container commit
+
+#Install WhiteSur-KDE
+cd /tmp && \
+git clone https://github.com/vinceliuice/WhiteSur-kde && \
+cd WhiteSur-kde && \
+./install.sh && \
+ostree container commit
+
+#Install WhiteSur-GTK
+cd /tmp && \
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme --depth=1 && \
+cd WhiteSur-gtk-theme && \
+./install.sh && \
 ostree container commit
