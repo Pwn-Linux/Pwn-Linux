@@ -93,11 +93,15 @@ cd /tmp && \
 git clone https://github.com/vinceliuice/WhiteSur-kde && \
 cd WhiteSur-kde && \
 ./install.sh && \
+rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-alt && \
+rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-dark && \
+rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur && \
+rm -r /usr/share/plasma/layout-templates/org.github.desktop.WhiteSurPanel && \
 ostree container commit
 
 #Install WhiteSur-GTK
 cd /tmp && \
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme --depth=1 && \
 cd WhiteSur-gtk-theme && \
-./install.sh && \
+./install.sh -d /usr/share/themes && \
 ostree container commit
