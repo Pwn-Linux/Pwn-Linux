@@ -96,7 +96,6 @@ cd WhiteSur-kde && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-alt && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-dark && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur && \
-rm -r /usr/share/plasma/layout-templates/org.github.desktop.WhiteSurPanel && \
 ostree container commit
 
 #Install WhiteSur-GTK
