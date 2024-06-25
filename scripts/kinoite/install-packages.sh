@@ -30,6 +30,7 @@ rpm-ostree install \
     plasma-workspace-x11 \
     xorg-x11-drv-amdgpu \
     xorg-x11-drv-intel \
+    qt6-qtwebsockets \
     cargo && \
 rpm-ostree install \
     steamdeck-kde-presets-desktop  && \
