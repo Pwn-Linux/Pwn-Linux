@@ -58,13 +58,6 @@ cp -r /tmp/libdbusmenu-gtk3/usr/ /usr/ && \
 cp -r /tmp/libdbusmenu-gtk3-devel/usr/ /usr/ && \
 ostree container commit
 
-#Install Tela Circle Icons
-cd /tmp && \
-git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
-cd Tela-circle-icon-theme && \
-./install.sh && \
-ostree container commit
-
 #Install Window Title applet for macOS like layouts
 cd /usr/share/plasma/plasmoids && \
 git clone https://github.com/dhruv8sh/plasma6-window-title-applet org.kde.windowtitle
@@ -87,37 +80,22 @@ git clone https://gitlab.com/divinae/uswitch && \
 mv /tmp/uswitch/package /usr/share/plasma/plasmoids/com.dv.uswitcher && \
 ostree container commit
 
-#Install WhiteSur-KDE
+#Install Tela Circle Icons
 cd /tmp && \
-git clone https://github.com/vinceliuice/WhiteSur-kde && \
-cd WhiteSur-kde && \
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
+cd Tela-circle-icon-theme && \
 ./install.sh && \
+ostree container commit
+
+#Install WhiteSur-KDE
+rpm-ostree install \
+   WhiteSur-kde  && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-alt && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-dark && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur && \
 ostree container commit
 
 #Install WhiteSur-GTK
-cd /tmp && \
-git clone https://github.com/vinceliuice/WhiteSur-gtk-theme --depth=1 && \
-cd WhiteSur-gtk-theme && \
 rpm-ostree install \
-    sassc \
-    glib2 \
-    glib2-devel \
-    libxml2 \
-    ImageMagick \
-    dialog \
-    ostree \
-    libappstream-glib  && \
-./install.sh -d /usr/share/themes && \
-rpm-ostree remove \
-    sassc \
-    glib2 \
-    glib2-devel \
-    libxml2 \
-    ImageMagick \
-    dialog \
-    ostree \
-    libappstream-glib  && \
+   WhiteSur-gtk-theme  && \
 ostree container commit
