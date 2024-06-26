@@ -87,6 +87,11 @@ cd Tela-circle-icon-theme && \
 ./install.sh && \
 ostree container commit
 
+#Install WhiteSur-cursors
+rpm-ostree install \
+   WhiteSur-cursor-theme  && \
+ostree container commit
+
 #Install WhiteSur-KDE
 rpm-ostree install \
    WhiteSur-kde  && \
