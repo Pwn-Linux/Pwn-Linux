@@ -34,13 +34,11 @@ ostree container commit
 
 #Install steamdeck-kde-presets-desktop from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
     steamdeck-kde-presets-desktop && \
 ostree container commit
 
 #Install libdbusmenu and libdbusmenu-gtk{2,3} from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
     libdbusmenu \
     libdbusmenu-devel \
     libdbusmenu-gtk2 \
@@ -51,14 +49,12 @@ ostree container commit
 
 #Install appmenu-gtk-module from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
     appmenu-gtk3-module \
     appmenu-gtk2-module && \
 ostree container commit
 
 #Install plasma applets from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
     applet-window-buttons  && \
 ostree container commit
 
@@ -93,13 +89,11 @@ ostree container commit
 
 #Install WhiteSur-cursors from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
    WhiteSur-cursor-theme  && \
 ostree container commit
 
 #Install WhiteSur-KDE from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
    WhiteSur-kde  && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-alt && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-dark && \
@@ -108,6 +102,5 @@ ostree container commit
 
 #Install WhiteSur-GTK from Pwn Linux Copr
 rpm-ostree install \
---from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
    WhiteSur-gtk-theme  && \
 ostree container commit
