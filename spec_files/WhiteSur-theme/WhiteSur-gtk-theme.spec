@@ -38,5 +38,5 @@ rm -rf %{buildroot}%{_datadir}/themes/{*-hdpi,*-xhdpi}
 %{_datadir}/themes/WhiteSur-*
 
 %changelog
-* Sat Jun 25 2024
+* Sat Jun 25 2024 Tohur <tohur@pwn-linuz.xyz> - 20240501-0.1.git5c94e8c
 - Initial build
