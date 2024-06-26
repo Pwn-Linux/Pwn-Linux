@@ -27,7 +27,8 @@ SDDM_DIR=%{buildroot}%{_datadir}/sddm/themes
 mkdir -p ${SDDM_DIR}
 
 cp -r sddm/WhiteSur-* ${SDDM_DIR}
-./install.sh
+
+./install.sh --dest %{buildroot}%{_datadir}
 
 %files
 %{_datadir}/aurorae/themes
