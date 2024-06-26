@@ -13,8 +13,6 @@ rpm-ostree install \
     cmake \
     vala \
     meson \
-    glib2 \
-    glib2-devel \
     dbusmenu-qt \
     libdbusmenu-gtk2 \
     libdbusmenu-gtk2-devel \
@@ -103,5 +101,23 @@ ostree container commit
 cd /tmp && \
 git clone https://github.com/vinceliuice/WhiteSur-gtk-theme --depth=1 && \
 cd WhiteSur-gtk-theme && \
+rpm-ostree install \
+    sassc \
+    glib2 \
+    glib2-devel \
+    libxml2 \
+    ImageMagick \
+    dialog \
+    ostree \
+    libappstream-glib  && \
 ./install.sh -d /usr/share/themes && \
+rpm-ostree remove \
+    sassc \
+    glib2 \
+    glib2-devel \
+    libxml2 \
+    ImageMagick \
+    dialog \
+    ostree \
+    libappstream-glib  && \
 ostree container commit
