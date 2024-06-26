@@ -9,9 +9,9 @@
         ],
         "Category": "",
         "Description": "macOS style theme",
-        "Id": "org.kde.plasma.desktop.cupertino.dark.desktop",
+        "Id": "org.kde.plasma.desktop.cupertino.desktop",
         "License": "GPLv2+",
-        "Name": "Cupertino Dark",
+        "Name": "Cupertino",
         "ServiceTypes": [
             "Plasma/LookAndFeel"
         ],
