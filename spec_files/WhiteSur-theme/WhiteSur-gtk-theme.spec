@@ -8,7 +8,7 @@ Summary:        WhiteSur is a MacOS Big Sur like theme
 BuildArch:      noarch
 License:        GPLv3
 URL:            https://github.com/vinceliuice/WhiteSur-gtk-theme
-Source0:        %{url}/tar.gz/refs/heads/master/WhiteSur-gtk-theme-master.tar.gz
+Source0:        %{url}/archive/master/WhiteSur-gtk-theme-master.tar.gz
 
 BuildRequires:  sassc
 BuildRequires:  glib2-devel
