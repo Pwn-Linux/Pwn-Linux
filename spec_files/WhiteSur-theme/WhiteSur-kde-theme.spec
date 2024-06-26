@@ -56,7 +56,7 @@ cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
 cp -r plasma/plasmoids/*              ${PLASMOID_DIR}
 cp -r wallpaper/WhiteSur              ${WALLPAPER_DIR}
 cp -r latte-dock/*                    ${LATTE_DIR}
-cp -r sddm/WhiteSur                   ${SDDM_DIR}
+cp -r sddm/WhiteSur-*                   ${SDDM_DIR}
 
 %files
 %{_datadir}/aurorae/themes
@@ -68,7 +68,7 @@ cp -r sddm/WhiteSur                   ${SDDM_DIR}
 %{_datadir}/Kvantum
 %{_datadir}/wallpapers
 %{_datadir}/latte/config
-%{_datadir}/sddm/themes/WhiteSur
+%{_datadir}/sddm/themes
 
 %changelog
 {{{ git_dir_changelog }}}
