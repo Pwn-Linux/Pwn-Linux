@@ -1,8 +1,5 @@
-%global date 2024-05-01
-%define formatted_version %(echo %{version} | sed 's/^\(....\)\(..\)\(..\)$/\1-\2-\3/')
-
 Name:           WhiteSur-gtk-theme
-Version:        20240501
+Version:        {{{ git_dir_version }}}
 Release:        1%{?dist}
 Summary:        WhiteSur is a MacOS Big Sur like theme
 BuildArch:      noarch
@@ -38,5 +35,4 @@ rm -rf %{buildroot}%{_datadir}/themes/{*-hdpi,*-xhdpi}
 %{_datadir}/themes/WhiteSur-*
 
 %changelog
-* Sat Jun 25 2024 Tohur <tohur@pwn-linuz.xyz> - 20240501-0.1.git5c94e8c
-- Initial build
+{{{ git_dir_changelog }}}
