@@ -18,7 +18,7 @@ GTK 3 and GTK 2 based desktop environments like Gnome, Pantheon, XFCE, Mate, etc
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p %{buildroot}%{_datadir}/themes
+mkdir -p %{buildroot}%{_datadir}/themes/macOS-Dark
 cp -r * %{buildroot}%{_datadir}/themes/macOS-Dark
 
 %files
