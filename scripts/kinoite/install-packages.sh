@@ -13,6 +13,7 @@ rpm-ostree install \
     cmake \
     vala \
     meson \
+    glib2 \
     glib2-devel \
     dbusmenu-qt \
     libdbusmenu-gtk2 \
