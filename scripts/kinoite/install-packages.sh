@@ -90,12 +90,11 @@ rpm-ostree install \
    WhiteSur-cursor-theme  && \
 ostree container commit
 
-#Install WhiteSur-KDE from Pwn Linux Copr
+#Install MacVentura-KDE from Pwn Linux Copr
 rpm-ostree install \
-   WhiteSur-kde  && \
-rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-alt && \
-rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-dark && \
-rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur && \
+   MacVentura-kde  && \
+rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Dark && \
+rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Light&& \
 ostree container commit
 
 #Install WhiteSur-GTK from Pwn Linux Copr

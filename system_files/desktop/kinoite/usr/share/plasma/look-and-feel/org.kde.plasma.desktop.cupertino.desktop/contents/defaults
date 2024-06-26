@@ -2,13 +2,13 @@
 widgetStyle=Breeze
 
 [kdeglobals][General]
-ColorScheme=WhiteSur
+ColorScheme=MacVenturaLight
 
 [kdeglobals][Icons]
 Theme=Tela-circle-dark
 
 [plasmarc][Theme]
-name=WhiteSur
+name=MacVentura-Light
 
 [kcminputrc][Mouse]
 cursorTheme=WhiteSur-cursors
@@ -23,5 +23,5 @@ LayoutName=org.kde.breeze.desktop
 ButtonsOnLeft=XAI
 ButtonsOnRight=
 library=org.kde.kwin.aurorae
-theme=__aurorae__svg__WhiteSur
+theme=__aurorae__svg__MacVentura-Light
 
