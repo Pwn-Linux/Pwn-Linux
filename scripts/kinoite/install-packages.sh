@@ -96,3 +96,9 @@ rpm-ostree install \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Dark && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Light&& \
 ostree container commit
+
+#Install Ventura gtk themes from Pwn Linux Copr
+rpm-ostree install \
+   Ventura-gtk-theme \
+   VenturaDark-gtk-theme  && \
+ostree container commit
