@@ -22,6 +22,11 @@ WhiteSur KDE theme
 %setup -q -n %{name}-master
 
 %install
+SDDM_DIR=%{buildroot}%{_datadir}/sddm/themes
+
+mkdir -p ${SDDM_DIR}
+
+cp -r sddm/WhiteSur-* ${SDDM_DIR}
 ./install.sh
 
 %files
@@ -30,10 +35,8 @@ WhiteSur KDE theme
 %{_datadir}/plasma/desktoptheme
 %{_datadir}/plasma/look-and-feel
 %{_datadir}/plasma/layout-templates
-%{_datadir}/plasma/plasmoids
 %{_datadir}/Kvantum
 %{_datadir}/wallpapers
-%{_datadir}/latte/config
 %{_datadir}/sddm/themes
 
 %changelog
