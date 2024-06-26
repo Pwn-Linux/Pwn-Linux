@@ -8,7 +8,7 @@ Version: {{{ git_dir_version }}}
 License: GPLv3
 Release: 1%{?dist}
 URL:     https://github.com/vinceliuice/MacVentura-kde
-Source0: %{url}/archive/master/MacVentura-kde-master.tar.gz
+Source0: %{url}/archive/master/MacVentura-kde-main.tar.gz
 
 BuildArch: noarch
 BuildRequires: coreutils
@@ -16,10 +16,10 @@ BuildRequires: coreutils
 #Requires: kvantum
 
 %description
-WhiteSur KDE theme
+MacVentura KDE theme
 
 %prep
-%setup -q -n %{name}-master
+%setup -q -n %{name}-main
 
 %install
 AURORAE_DIR=%{buildroot}%{_datadir}/aurorae/themes
