@@ -1,13 +1,13 @@
 %global hash b6587fe
 
 Name:           WhiteSur-gtk-theme
-Version:        20240501
-Release:        %{?hash:0.1.git%{hash}}%{!?hash:1}%{?dist}
+Version:        2024-05-01
+Release:        %{version}%
 Summary:        WhiteSur is a MacOS Big Sur like theme
 BuildArch:      noarch
 License:        GPLv3
 URL:            https://github.com/vinceliuice/WhiteSur-gtk-theme
-Source0:        %{name}-%{version}%{?hash:.git%{hash}}.tar.xz
+Source0:        %{version}%.tar.xz
 
 BuildRequires:  sassc
 BuildRequires:  glib2-devel
