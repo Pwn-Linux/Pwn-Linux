@@ -1,8 +1,9 @@
 %global hash b6587fe
+%define formatted_version %(echo %{version} | sed 's/^\(....\)\(..\)\(..\)$/\1-\2-\3/')
 
 Name:           WhiteSur-gtk-theme
-Version:        2024-05-01
-Release:        %{version}
+Version:        20240501
+Release:        1%{?dist}
 Summary:        WhiteSur is a MacOS Big Sur like theme
 BuildArch:      noarch
 License:        GPLv3
