@@ -6,11 +6,11 @@
 Name: WhiteSur-cursor-theme
 Summary: WhiteSur cursor Theme
 
-Version: %{date}
+Version: {{{ git_dir_version }}}
 License: GPLv3
-Release: %{?hash:0.1.git%{hash}}%{!?hash:1}%{?dist}
+Release: 1%{?dist}
 URL:     https://github.com/vinceliuice/WhiteSur-icon-theme
-Source0: %{name}-%{date}%{?hash:.git%{hash}}.tar.%{?hash:xz}%{!?hash:gz}
+Source0: %{url}/archive/master/WhiteSur-kde-master.tar.gz
 
 BuildArch: noarch
 BuildRequires: coreutils
@@ -19,7 +19,7 @@ BuildRequires: coreutils
 WhiteSur cursor theme
 
 %prep
-%autosetup -n %{name}-%{date}%{?hash:.git%{hash}}
+%setup -q -n %{name}-master
 
 %build
 
@@ -32,6 +32,5 @@ cp -r dist ${DEST}/WhiteSur-cursor
 %{_datadir}/icons/WhiteSur-cursor
 
 %changelog
-* Sat Oct 08 2022 Tomas Chang <changyp6@gmail.com> - 20220617-0.1.git5c94e8c
-- Initial build
+{{{ git_dir_changelog }}}
 
