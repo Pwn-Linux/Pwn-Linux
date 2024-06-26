@@ -46,3 +46,7 @@ rm -rf %{buildroot}%{_datadir}/themes/{*-hdpi,*-xhdpi}
 %license COPYING
 %doc README.md
 %{_datadir}/themes/WhiteSur-*
+
+%changelog
+* Sat Jun 25 2024
+- Initial build
