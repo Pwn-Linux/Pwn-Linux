@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 %define __os_install_post %{nil}
 
-Name: WhiteSur-kde-theme
+Name: WhiteSur-kde
 Summary: WhiteSur KDE Theme
 
 Version: {{{ git_dir_version }}}
