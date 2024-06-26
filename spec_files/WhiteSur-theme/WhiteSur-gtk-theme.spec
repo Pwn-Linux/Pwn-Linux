@@ -22,7 +22,15 @@ WhiteSur is a MacOS Big Sur like theme for GTK 3, GTK 2 and Gnome-Shell which su
 GTK 3 and GTK 2 based desktop environments like Gnome, Pantheon, XFCE, Mate, etc.
 
 %prep
-%autosetup -n %{date}
+# Download the source tarball
+spectool -g -R -C %{_sourcedir} %{_specdir}/%{name}.spec
+
+# Rename the tarball
+mv %{_sourcedir}/%{date}.tar.gz %{_sourcedir}/%{name}-%{date}.tar.gz
+
+# Extract the renamed tarball
+%setup -q -n %{name}-%{date}
+
 sed -i -e "s|SUDO_BIN=.*|SUDO_BIN=\"/usr/bin/sudo\"|g" shell/lib-core.sh
 
 %build
@@ -35,12 +43,6 @@ mkdir -p %{buildroot}%{_datadir}/themes
 rm -rf %{buildroot}%{_datadir}/themes/{*-hdpi,*-xhdpi}
 
 %files
-%license COPYING 
+%license COPYING
 %doc README.md
 %{_datadir}/themes/WhiteSur-*
-
-
-%changelog
-* Thu Jul 13 2023 Tomas Chang <changyp6@gmail.com> - 20230710-0.1.git679d6f9
-- Latest git
-
