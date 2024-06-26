@@ -9,8 +9,8 @@ Summary: WhiteSur cursor Theme
 Version: {{{ git_dir_version }}}
 License: GPLv3
 Release: 1%{?dist}
-URL:     https://github.com/vinceliuice/WhiteSur-icon-theme
-Source0: %{url}/archive/master/WhiteSur-icon-theme-master.tar.gz
+URL:     https://github.com/vinceliuice/WhiteSur-cursors
+Source0: %{url}/archive/master/WhiteSur-cursors-master.tar.gz
 
 BuildArch: noarch
 BuildRequires: coreutils
@@ -19,7 +19,7 @@ BuildRequires: coreutils
 WhiteSur cursor theme
 
 %prep
-%setup -q -n WhiteSur-icon-theme-master
+%setup -q -n WhiteSur-cursors-master
 
 %build
 
