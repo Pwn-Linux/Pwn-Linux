@@ -82,7 +82,9 @@ cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
 cp -r plasma/plasmoids/*              ${PLASMOID_DIR}
 cp -r wallpaper/WhiteSur              ${WALLPAPER_DIR}
 cp -r latte-dock/*                    ${LATTE_DIR}
-cp -r sddm/WhiteSur-*                   ${SDDM_DIR}
+cp -r sddm/WhiteSur-6.0               ${SDDM_DIR}
+cp -r sddm/preview-light.jpeg         ${SDDM_DIR}/WhiteSur-6.0/preview.jpeg
+cp -r sddm/background-light.jpeg      ${SDDM_DIR}/WhiteSur-6.0/background.jpeg
 
 %files
 %{_datadir}/aurorae/themes
