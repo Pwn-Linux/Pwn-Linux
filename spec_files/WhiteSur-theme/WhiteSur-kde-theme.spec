@@ -13,7 +13,7 @@ Source0: %{url}/archive/master/WhiteSur-kde-master.tar.gz
 BuildArch: noarch
 BuildRequires: coreutils
 
-Requires: kvantum
+#Requires: kvantum
 
 %description
 WhiteSur KDE theme
