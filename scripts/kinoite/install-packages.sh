@@ -2,6 +2,7 @@
 
 set -ouex pipefail
 
+#Install needed packages from the fedora repos
 rpm-ostree install \
     binutils \
     binutils-devel \
@@ -14,11 +15,6 @@ rpm-ostree install \
     vala \
     meson \
     dbusmenu-qt \
-    libdbusmenu-gtk2 \
-    libdbusmenu-gtk2-devel \
-    appmenu-gtk3-module \
-    appmenu-gtk2-module \
-    applet-window-buttons \
     rust \
     krdp \
     gamemode \
@@ -34,28 +30,36 @@ rpm-ostree install \
     kvantum \
     kvantum-qt5 \
     cargo && \
-rpm-ostree install \
-    steamdeck-kde-presets-desktop  && \
 ostree container commit
 
-#Install libdbusmenu and libdbusmenu-gtk3 from rpm due to broken packaging in the repos
-cd /tmp && \
-mkdir libdbusmenu && \
-mkdir libdbusmenu-devel && \
-mkdir libdbusmenu-gtk3 && \
-mkdir libdbusmenu-gtk3-devel && \
-wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-16.04.0-27.fc40.x86_64.rpm && \
-wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-devel-16.04.0-27.fc40.x86_64.rpm && \
-wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm && \
-wget https://kojipkgs.fedoraproject.org//packages/libdbusmenu/16.04.0/27.fc40/x86_64/libdbusmenu-gtk3-devel-16.04.0-27.fc40.x86_64.rpm && \
-rpm2cpio libdbusmenu-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu && cpio -idmv) && \
-rpm2cpio libdbusmenu-devel-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu-devel && cpio -idmv) && \
-rpm2cpio libdbusmenu-gtk3-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu-gtk3 && cpio -idmv) && \
-rpm2cpio libdbusmenu-gtk3-devel-16.04.0-27.fc40.x86_64.rpm | (cd libdbusmenu-gtk3-devel && cpio -idmv) && \
-cp -r /tmp/libdbusmenu/usr/ /usr/ && \
-cp -r /tmp/libdbusmenu-devel/usr/ /usr/ && \
-cp -r /tmp/libdbusmenu-gtk3/usr/ /usr/ && \
-cp -r /tmp/libdbusmenu-gtk3-devel/usr/ /usr/ && \
+#Install steamdeck-kde-presets-desktop from Pwn Linux Copr
+rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
+    steamdeck-kde-presets-desktop && \
+ostree container commit
+
+#Install libdbusmenu and libdbusmenu-gtk{2,3} from Pwn Linux Copr
+rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
+    libdbusmenu \
+    libdbusmenu-devel \
+    libdbusmenu-gtk2 \
+    libdbusmenu-gtk2-devel \
+    libdbusmenu-gtk3 \
+    libdbusmenu-gtk3-devel && \
+ostree container commit
+
+#Install appmenu-gtk-module from Pwn Linux Copr
+rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
+    appmenu-gtk3-module \
+    appmenu-gtk2-module && \
+ostree container commit
+
+#Install plasma applets from Pwn Linux Copr
+rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
+    applet-window-buttons  && \
 ostree container commit
 
 #Install Window Title applet for macOS like layouts
@@ -87,20 +91,23 @@ cd Tela-circle-icon-theme && \
 ./install.sh && \
 ostree container commit
 
-#Install WhiteSur-cursors
+#Install WhiteSur-cursors from Pwn Linux Copr
 rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
    WhiteSur-cursor-theme  && \
 ostree container commit
 
-#Install WhiteSur-KDE
+#Install WhiteSur-KDE from Pwn Linux Copr
 rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
    WhiteSur-kde  && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-alt && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur-dark && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.WhiteSur && \
 ostree container commit
 
-#Install WhiteSur-GTK
+#Install WhiteSur-GTK from Pwn Linux Copr
 rpm-ostree install \
+--from repo=copr:copr.fedorainfracloud.org:tohur:Pwn \
    WhiteSur-gtk-theme  && \
 ostree container commit
