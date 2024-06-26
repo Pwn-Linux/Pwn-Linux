@@ -54,9 +54,7 @@ cp -r plasma/desktoptheme/icons       ${PLASMA_DIR}/MacVentura-Dark
 cp -r plasma/look-and-feel/*          ${LOOKFEEL_DIR}
 cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
 cp -r plasma/plasmoids/*              ${PLASMOID_DIR}
-cp -r wallpaper/MacVentura            ${WALLPAPER_DIR}
-cp -r wallpaper/MacVentura-Dark       ${WALLPAPER_DIR}
-cp -r wallpaper/MacVentura-Light      ${WALLPAPER_DIR}
+cp -r wallpapers/MacVentura*          ${WALLPAPER_DIR}
 cp -r latte-dock/*                    ${LATTE_DIR}
 
 %files
