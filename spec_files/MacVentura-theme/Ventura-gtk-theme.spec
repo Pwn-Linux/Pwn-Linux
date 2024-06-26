@@ -7,12 +7,6 @@ License:        GPLv3
 URL:            https://github.com/B00merang-Project/
 Source0:        %{url}/macOS/archive/master/macOS-master.tar.gz
 
-BuildRequires:  sassc
-BuildRequires:  glib2-devel
-BuildRequires:  inkscape
-BuildRequires:  optipng
-BuildRequires:  ImageMagick
-
 %description
 WhiteSur is a MacOS Big Sur like theme for GTK 3, GTK 2 and Gnome-Shell which supports
 GTK 3 and GTK 2 based desktop environments like Gnome, Pantheon, XFCE, Mate, etc.
