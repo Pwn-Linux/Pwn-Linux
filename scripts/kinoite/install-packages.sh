@@ -96,14 +96,3 @@ rpm-ostree install \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Dark && \
 rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Light&& \
 ostree container commit
-
-#Install WhiteSur-GTK from Pwn Linux Copr
-rpm-ostree install \
-   WhiteSur-gtk-theme  && \
-ostree container commit
-
-##Install lightly from Pwn Linux Copr
-#rpm-ostree install \
-#    lightly-qt6 \
-#    lightly-qt5 && \
-#ostree container commit
