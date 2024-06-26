@@ -10,7 +10,7 @@ Version: {{{ git_dir_version }}}
 License: GPLv3
 Release: 1%{?dist}
 URL:     https://github.com/vinceliuice/WhiteSur-icon-theme
-Source0: %{url}/archive/master/WhiteSur-kde-master.tar.gz
+Source0: %{url}/archive/master/WhiteSur-icon-theme-master.tar.gz
 
 BuildArch: noarch
 BuildRequires: coreutils
@@ -19,7 +19,7 @@ BuildRequires: coreutils
 WhiteSur cursor theme
 
 %prep
-%setup -q -n %{name}-master
+%setup -q -n WhiteSur-icon-theme-master
 
 %build
 
