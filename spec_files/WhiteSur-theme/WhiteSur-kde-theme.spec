@@ -46,13 +46,19 @@ mkdir -p ${SDDM_DIR}
 
 cp -r aurorae/normal/* ${AURORAE_DIR}/
 cp -r aurorae/common/assets/*.svg ${AURORAE_DIR}/WhiteSur
+rm -r ${AURORAE_DIR}/WhiteSur_*
 cp -r aurorae/common/assets-dark/*.svg ${AURORAE_DIR}/WhiteSur-dark
+rm -r ${AURORAE_DIR}/WhiteSur-dark_*
 cp -r aurorae/sharp/* ${AURORAE_DIR}
 cp -r aurorae/common/assets/*.svg ${AURORAE_DIR}/WhiteSur-sharp
+rm -r ${AURORAE_DIR}/WhiteSur-sharp_*
 cp -r aurorae/common/assets-dark/*.svg ${AURORAE_DIR}/WhiteSur-dark-sharp
+rm -r ${AURORAE_DIR}/WhiteSur-dark-sharp_*
 cp -r aurorae/opaque/* ${AURORAE_DIR}
 cp -r aurorae/common/assets/*.svg ${AURORAE_DIR}/WhiteSur-opaque
+rm -r ${AURORAE_DIR}/WhiteSur-opaque_*
 cp -r aurorae/common/assets-dark/*.svg ${AURORAE_DIR}/WhiteSur-dark-opaque
+rm -r ${AURORAE_DIR}/WhiteSur-opaque-dark_*
 cp -r Kvantum/*                       ${KVANTUM_DIR}
 cp -r color-schemes/*                 ${SCHEMES_DIR}
 cp -r plasma/desktoptheme/WhiteSur*   ${PLASMA_DIR}
