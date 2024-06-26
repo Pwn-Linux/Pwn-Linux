@@ -27,8 +27,6 @@ rpm-ostree install \
     xorg-x11-drv-amdgpu \
     xorg-x11-drv-intel \
     qt6-qtwebsockets \
-    kvantum \
-    kvantum-qt5 \
     cargo && \
 ostree container commit
 
