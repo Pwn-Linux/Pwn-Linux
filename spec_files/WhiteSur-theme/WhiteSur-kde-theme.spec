@@ -46,19 +46,32 @@ mkdir -p ${SDDM_DIR}
 
 cp -r aurorae/normal/* ${AURORAE_DIR}/
 cp -r aurorae/common/assets/*.svg ${AURORAE_DIR}/WhiteSur
-rm -r ${AURORAE_DIR}/WhiteSur_*
+rm -r ${AURORAE_DIR}/WhiteSur_x1.5
+rm -r ${AURORAE_DIR}/WhiteSur_x1.25
+rm -r ${AURORAE_DIR}/WhiteSur_x1.75
 cp -r aurorae/common/assets-dark/*.svg ${AURORAE_DIR}/WhiteSur-dark
-rm -r ${AURORAE_DIR}/WhiteSur-dark_*
+rm -r ${AURORAE_DIR}/WhiteSur-dark_x1.5
+rm -r ${AURORAE_DIR}/WhiteSur-dark_x1.25
+rm -r ${AURORAE_DIR}/WhiteSur-dark_x1.75
 cp -r aurorae/sharp/* ${AURORAE_DIR}
 cp -r aurorae/common/assets/*.svg ${AURORAE_DIR}/WhiteSur-sharp
-rm -r ${AURORAE_DIR}/WhiteSur-sharp_*
+rm -r ${AURORAE_DIR}/WhiteSur-sharp_x1.5
+rm -r ${AURORAE_DIR}/WhiteSur-sharp_x1.25
+rm -r ${AURORAE_DIR}/WhiteSur-sharp_x1.75
 cp -r aurorae/common/assets-dark/*.svg ${AURORAE_DIR}/WhiteSur-dark-sharp
-rm -r ${AURORAE_DIR}/WhiteSur-dark-sharp_*
+rm -r ${AURORAE_DIR}/WhiteSur-dark-sharp_x1.5
+rm -r ${AURORAE_DIR}/WhiteSur-dark-sharp_x1.25
+rm -r ${AURORAE_DIR}/WhiteSur-dark-sharp_x1.75
 cp -r aurorae/opaque/* ${AURORAE_DIR}
 cp -r aurorae/common/assets/*.svg ${AURORAE_DIR}/WhiteSur-opaque
-rm -r ${AURORAE_DIR}/WhiteSur-opaque_*
+rm -r ${AURORAE_DIR}/WhiteSur-opaque_x1.5
+rm -r ${AURORAE_DIR}/WhiteSur-opaque_x1.25
+rm -r ${AURORAE_DIR}/WhiteSur-opaque_x1.75
 cp -r aurorae/common/assets-dark/*.svg ${AURORAE_DIR}/WhiteSur-dark-opaque
-rm -r ${AURORAE_DIR}/WhiteSur-opaque-dark_*
+rm -r ${AURORAE_DIR}/WhiteSur-opaque-dark_x1.5
+rm -r ${AURORAE_DIR}/WhiteSur-opaque-dark_x1.25
+rm -r ${AURORAE_DIR}/WhiteSur-opaque-dark_x1.75
+
 cp -r Kvantum/*                       ${KVANTUM_DIR}
 cp -r color-schemes/*                 ${SCHEMES_DIR}
 cp -r plasma/desktoptheme/WhiteSur*   ${PLASMA_DIR}
