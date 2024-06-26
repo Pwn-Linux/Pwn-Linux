@@ -44,7 +44,6 @@ mkdir -p ${WALLPAPER_DIR}
 mkdir -p ${LATTE_DIR}
 mkdir -p ${SDDM_DIR}
 
-cp -r aurorae/normal/* ${AURORAE_DIR}/
 cp -r aurorae/Sharp/MacVentura-Dark/ ${AURORAE_DIR}/MacVentura-Dark
 cp -r aurorae/Sharp/MacVentura-Light/ ${AURORAE_DIR}/MacVentura-Light
 cp -r Kvantum/*                       ${KVANTUM_DIR}
