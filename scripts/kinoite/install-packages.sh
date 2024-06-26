@@ -102,3 +102,9 @@ ostree container commit
 rpm-ostree install \
    WhiteSur-gtk-theme  && \
 ostree container commit
+
+#Install lightly from Pwn Linux Copr
+rpm-ostree install \
+    lightly-qt6 \
+    lightly-qt5 && \
+ostree container commit
