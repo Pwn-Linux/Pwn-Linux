@@ -2,12 +2,12 @@
 
 Name:           WhiteSur-gtk-theme
 Version:        2024-05-01
-Release:        %{version}%
+Release:        %{version}
 Summary:        WhiteSur is a MacOS Big Sur like theme
 BuildArch:      noarch
 License:        GPLv3
 URL:            https://github.com/vinceliuice/WhiteSur-gtk-theme
-Source0:        %{url}%/archive/%{version}%.tar.xz
+Source0:        %{url}/archive/%{version}.tar.xz
 
 BuildRequires:  sassc
 BuildRequires:  glib2-devel
@@ -21,7 +21,7 @@ WhiteSur is a MacOS Big Sur like theme for GTK 3, GTK 2 and Gnome-Shell which su
 GTK 3 and GTK 2 based desktop environments like Gnome, Pantheon, XFCE, Mate, etc.
 
 %prep
-%autosetup -n %{name}-%{version}%{?hash:.git%{hash}}
+%autosetup -n %{version}
 sed -i -e "s|SUDO_BIN=.*|SUDO_BIN=\"/usr/bin/sudo\"|g" shell/lib-core.sh
 
 %build
