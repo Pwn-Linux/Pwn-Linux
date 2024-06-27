@@ -23,7 +23,7 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
    fi 
 #delete unused themes from $HOME/.themes
 # List of folders to check
-folders=("Adwaita" "Adwaita-dark" "Clearlooks" "Crux" "Default" "Emacs" "HighContrast" "Industrial" "Mist" "Raleigh" "ThinkIce")
+folders=("Adwaita" "Adwaita-dark" "Clearlooks" "Crux" "Default" "Emacs" "HighContrast" "Industrial" "Mist" "Raleigh" "ThinIce")
 
 # Directory to check within
 theme_dir="$HOME/.themes"
