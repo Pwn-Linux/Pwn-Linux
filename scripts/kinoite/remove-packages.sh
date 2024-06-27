@@ -19,7 +19,6 @@ rpm-ostree override remove \
     kfind\
     krfb \
     krfb-libs \
-    kmousetool \
     kwrite \
     lutris \
     steam \

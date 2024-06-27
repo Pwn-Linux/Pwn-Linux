@@ -90,11 +90,9 @@ rpm-ostree install \
    WhiteSur-cursor-theme  && \
 ostree container commit
 
-#Install MacVentura-KDE from Pwn Linux Copr
+#Install Pwn-Linux-KDE from Pwn Linux Copr
 rpm-ostree install \
-   MacVentura-kde  && \
-rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Dark && \
-rm -r /usr/share/plasma/look-and-feel/com.github.vinceliuice.MacVentura-Light&& \
+   Pwn-Linux-kde  && \
 ostree container commit
 
 #Install Pwn Linux gtk themes from Pwn Linux Copr
