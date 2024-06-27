@@ -36,8 +36,6 @@ mkdir -p ${PLASMA_DIR}
 mkdir -p ${LOOKFEEL_DIR}
 mkdir -p ${LAYOUT_TEMPLATE_DIR}
 mkdir -p ${PLASMOID_DIR}
-#mkdir -p ${WALLPAPER_DIR}
-#mkdir -p ${SDDM_DIR}
 
 cp -r aurorae/*                       ${AURORAE_DIR}
 cp -r color-schemes/*                 ${SCHEMES_DIR}
@@ -46,7 +44,6 @@ cp -r plasma/desktoptheme/icons       ${PLASMA_DIR}/Pwn-Light
 cp -r plasma/desktoptheme/icons       ${PLASMA_DIR}/Pwn-Dark
 cp -r plasma/look-and-feel/*          ${LOOKFEEL_DIR}
 cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
-#cp -r wallpapers/Pwn*                 ${WALLPAPER_DIR}
 
 %files
 %{_datadir}/aurorae/themes
@@ -55,8 +52,7 @@ cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
 %{_datadir}/plasma/look-and-feel
 %{_datadir}/plasma/layout-templates
 %{_datadir}/plasma/plasmoids
-#%{_datadir}/wallpapers
-#%{_datadir}/sddm/themes
+
 
 %changelog
 {{{ git_dir_changelog }}}
