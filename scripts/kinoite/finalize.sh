@@ -52,6 +52,7 @@ ostree container commit
 
 #Move sddm folder from /usr/share to /usr/share/pwn-linux and sym link /usr/share/sddm to var
 mv /usr/share/sddm /usr/share/pwn-linux/sddm && \
+rm -r /usr/share/pwn-linux/sddm/themes/01-breeze-fedora && \
 ln -s /var/sddm /usr/share/sddm && \
 ostree container commit
 
