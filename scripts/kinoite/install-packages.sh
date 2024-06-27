@@ -23,10 +23,6 @@ rpm-ostree install \
     playerctl \
     flatpak-builder \
     samba \
-    plasma-workspace-x11 \
-    xorg-x11-drv-amdgpu \
-    xorg-x11-drv-intel \
-    qt6-qtwebsockets \
     cargo && \
 ostree container commit
 
