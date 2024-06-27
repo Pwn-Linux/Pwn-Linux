@@ -21,6 +21,24 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
     rsync -avu "/usr/share/themes/" "$HOME/.themes"
     echo "Contents rsynced and updated from  /usr/share/themes to .themes."
    fi 
+#delete unused themes from $HOME/.themes
+# List of folders to check
+folders=("Adwaita" "Adwaita-dark" "Clearlooks" "Crux" "Default" "Emacs" "HighContrast" "Industrial" "Mist" "Raleigh" "ThinkIce")
+
+# Directory to check within
+theme_dir="$HOME/.themes"
+
+# Loop through each folder and check if it exists, then delete if it does
+for folder in "${folders[@]}"; do
+    if [ -d "$theme_dir/$folder" ]; then
+        echo "Deleting $theme_dir/$folder"
+        rm -rf "$theme_dir/$folder"
+    else
+        echo "$theme_dir/$folder does not exist."
+    fi
+done
+
+echo "Unneeded themes removed."
 
 #Remove user Flathub
 flatpak remote-delete --user flathub
