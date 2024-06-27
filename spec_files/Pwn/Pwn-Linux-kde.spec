@@ -45,6 +45,8 @@ cp -r plasma/desktoptheme/icons       ${PLASMA_DIR}/Pwn-Light
 cp -r plasma/desktoptheme/icons       ${PLASMA_DIR}/Pwn-Dark
 cp -r plasma/look-and-feel/*          ${LOOKFEEL_DIR}
 cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
+#cp -r wallpapers/Pwn*                ${WALLPAPER_DIR}
+#cp -r sddm/Pwn*                      ${SDDM_DIR}
 
 %files
 %{_datadir}/aurorae/themes
