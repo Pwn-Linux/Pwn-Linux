@@ -5,13 +5,13 @@ Summary:        Pwn Linux gtk themeing highly inspired by macOS
 BuildArch:      noarch
 License:        GPLv3
 URL:            https://github.com/Pwn-Linux
-Source0:        %{url}/Pwn-Linux-gtk/archive/master/Pwn-Linux-gtk-master.tar.gz
+Source0:        %{url}/Pwn-Linux-gtk/archive/master/Pwn-Linux-gtk-main.tar.gz
 
 %description
 Pwn Linux gtk themeing highly inspired by macOS
 
 %prep
-%setup -q -n Pwn-Linux-gtk-master
+%setup -q -n Pwn-Linux-gtk-main
 
 %build
 
