@@ -21,7 +21,7 @@ mkdir -p %{buildroot}%{_datadir}/themes/Pwn
 cp -r * %{buildroot}%{_datadir}/themes/Pwn
 
 %files
-%license LICENSE
+%license LICENSE.md
 %doc README.md
 %{_datadir}/themes/Pwn
 
