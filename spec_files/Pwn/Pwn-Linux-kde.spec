@@ -54,7 +54,6 @@ cp -r plasma/layout-templates/*       ${LAYOUT_TEMPLATE_DIR}
 %{_datadir}/plasma/desktoptheme
 %{_datadir}/plasma/look-and-feel
 %{_datadir}/plasma/layout-templates
-%{_datadir}/plasma/plasmoids
 #%{_datadir}/wallpapers
 #%{_datadir}/sddm/themes
 
