@@ -7,7 +7,6 @@ rpm-ostree override remove \
     ark-libs \
     ptyxis \
     discover-overlay \
-    plasma-lookandfeel-fedora \
     filelight \
     firewall-config \
     plasma-discover \
