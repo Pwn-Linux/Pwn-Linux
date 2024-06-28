@@ -16,7 +16,8 @@ rpm-ostree override remove \
     input-remapper \
     kdebugsettings \
     kcharselect \
-    kfind\
+    kfind \
+    kjournald \
     krfb \
     krfb-libs \
     kwrite \
