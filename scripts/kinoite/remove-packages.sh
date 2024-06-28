@@ -18,6 +18,7 @@ rpm-ostree override remove \
     kcharselect \
     kfind \
     kjournald \
+    kjournald-libs \
     krfb \
     krfb-libs \
     kwrite \
