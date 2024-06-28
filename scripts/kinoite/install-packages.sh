@@ -48,9 +48,9 @@ rpm-ostree install \
 ostree container commit
 
 #Install plasma applets from Pwn Linux Repo
-rpm-ostree install \
-    applet-window-buttons  && \
-ostree container commit
+# rpm-ostree install \
+#     applet-window-buttons  && \
+# ostree container commit
 
 #Install Window Title applet for macOS like layouts
 cd /usr/share/plasma/plasmoids && \
