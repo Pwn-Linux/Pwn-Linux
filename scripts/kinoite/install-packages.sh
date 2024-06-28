@@ -95,3 +95,8 @@ ostree container commit
 rpm-ostree install \
    Pwn-Linux-gtk-theme && \
 ostree container commit
+
+#Install Pwn Linux sddm theme from Pwn Linux Repo
+rpm-ostree install \
+   sddm-pwn-linux && \
+ostree container commit
