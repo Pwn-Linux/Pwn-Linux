@@ -3,7 +3,7 @@
 set -ouex pipefail
 
 # Disable Repo
-sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/tohur-Pwn-fedora-40.repo && \
+sed -i 's@enabled=1@enabled=0@g' /etc/yum.repos.d/Pwn-Linux.repo && \
 ostree container commit
 
 # Remove uneeded files

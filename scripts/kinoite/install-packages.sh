@@ -26,28 +26,28 @@ rpm-ostree install \
     cargo && \
 ostree container commit
 
-#Install steamdeck-kde-presets-desktop from Pwn Linux Copr
+#Install steamdeck-kde-presets-desktop from Pwn Linux Repo
 rpm-ostree install \
     steamdeck-kde-presets-desktop && \
 ostree container commit
 
-#Install libdbusmenu and libdbusmenu-gtk{2,3} from Pwn Linux Copr
-rpm-ostree install \
-    libdbusmenu \
-    libdbusmenu-devel \
-    libdbusmenu-gtk2 \
-    libdbusmenu-gtk2-devel \
-    libdbusmenu-gtk3 \
-    libdbusmenu-gtk3-devel && \
-ostree container commit
+#Install libdbusmenu and libdbusmenu-gtk{2,3} from Pwn Linux Repo
+# rpm-ostree install \
+#     libdbusmenu \
+#     libdbusmenu-devel \
+#     libdbusmenu-gtk2 \
+#     libdbusmenu-gtk2-devel \
+#     libdbusmenu-gtk3 \
+#     libdbusmenu-gtk3-devel && \
+# ostree container commit
 
-#Install appmenu-gtk-module from Pwn Linux Copr
+#Install appmenu-gtk-module from Pwn Linux Repo
 rpm-ostree install \
     appmenu-gtk3-module \
     appmenu-gtk2-module && \
 ostree container commit
 
-#Install plasma applets from Pwn Linux Copr
+#Install plasma applets from Pwn Linux Repo
 rpm-ostree install \
     applet-window-buttons  && \
 ostree container commit
@@ -81,17 +81,17 @@ cd Tela-circle-icon-theme && \
 ./install.sh && \
 ostree container commit
 
-#Install WhiteSur-cursors from Pwn Linux Copr
+#Install WhiteSur-cursors from Pwn Linux Repo
 rpm-ostree install \
    WhiteSur-cursor-theme  && \
 ostree container commit
 
-#Install Pwn-Linux-KDE from Pwn Linux Copr
+#Install Pwn-Linux-KDE from Pwn Linux Repo
 rpm-ostree install \
    Pwn-Linux-kde  && \
 ostree container commit
 
-#Install Pwn Linux gtk themes from Pwn Linux Copr
+#Install Pwn Linux gtk themes from Pwn Linux Repo
 rpm-ostree install \
    Pwn-Linux-gtk-theme && \
 ostree container commit
