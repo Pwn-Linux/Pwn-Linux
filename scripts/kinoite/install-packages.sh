@@ -22,7 +22,7 @@ rpm-ostree install \
     pamixer \
     playerctl \
     flatpak-builder \
-    qt5-qtgraphicaleffects \
+    qt6-qt5compat \
     samba \
     cargo && \
 ostree container commit
