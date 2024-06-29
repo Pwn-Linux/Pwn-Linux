@@ -22,9 +22,6 @@ rpm-ostree override remove \
     krfb-libs \
     kwrite \
     lutris \
-    libdbusmenu-gtk3.i686 \
-    xapps \
-    python3-xapps-overrides \
     steam \
     fcitx5-mozc \
     fcitx5 \
@@ -37,6 +34,5 @@ rpm-ostree override remove \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
-    webapp-manager \
     qsynth && \
 ostree container commit
