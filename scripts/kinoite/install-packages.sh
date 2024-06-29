@@ -75,11 +75,9 @@ git clone https://gitlab.com/divinae/uswitch && \
 mv /tmp/uswitch/package /usr/share/plasma/plasmoids/com.dv.uswitcher && \
 ostree container commit
 
-#Install Tela Circle Icons
-cd /tmp && \
-git clone https://github.com/vinceliuice/Tela-circle-icon-theme && \
-cd Tela-circle-icon-theme && \
-./install.sh && \
+#Install Tela Circle Icons from Pwn Linux Repo
+rpm-ostree install \
+   Tela-circle-icon-theme  && \
 ostree container commit
 
 #Install WhiteSur-cursors from Pwn Linux Repo
