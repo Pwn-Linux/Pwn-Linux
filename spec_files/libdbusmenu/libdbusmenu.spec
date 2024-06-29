@@ -27,7 +27,12 @@ URL:        https://launchpad.net/libdbusmenu
 Source0:    https://launchpad.net/libdbusmenu/%{ubuntu_release}/%{version}/+download/%{name}-%{version}.tar.gz
 
 # patch to remove -Werror flag - fixes build despite usage of deprecated things
-Patch0:     00-no-werror.patch
+# PATCH-FIX-OPENSUSE
+Patch0:         0001-Fix-build-with-gtk-doc-1.32-due-to-non-existing-tree.patch
+# PATCH-FIX-UPSTREAM
+Patch1:         0002-genericmenuitem-Make-accelerator-text-appear-again.patch
+# PATCH-FIX-OPENSUSE
+Patch2:         0003-Fix-HAVE_VALGRIND-AM_CONDITIONAL.patch
 
 BuildRequires: make
 BuildRequires:  atk-devel

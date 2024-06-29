@@ -33,14 +33,16 @@ rpm-ostree install \
 ostree container commit
 
 #Install libdbusmenu and libdbusmenu-gtk{2,3} from Pwn Linux Repo
-# rpm-ostree install \
-#     libdbusmenu \
-#     libdbusmenu-devel \
-#     libdbusmenu-gtk2 \
-#     libdbusmenu-gtk2-devel \
-#     libdbusmenu-gtk3 \
-#     libdbusmenu-gtk3-devel && \
-# ostree container commit
+rpm-ostree override replace \
+--experimental \
+--from repo=home_tohur_Pwn-Linux \
+    libdbusmenu \
+    libdbusmenu-devel \
+    libdbusmenu-gtk2 \
+    libdbusmenu-gtk2-devel \
+    libdbusmenu-gtk3 \
+    libdbusmenu-gtk3-devel && \
+ostree container commit
 
 #Install appmenu-gtk-module from Pwn Linux Repo
 rpm-ostree install \
