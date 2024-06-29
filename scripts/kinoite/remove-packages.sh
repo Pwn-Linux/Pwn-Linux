@@ -23,6 +23,8 @@ rpm-ostree override remove \
     krfb-libs \
     kwrite \
     lutris \
+    libdbusmenu \
+    libdbusmenu-gtk3 \
     steam \
     fcitx5-mozc \
     fcitx5 \
