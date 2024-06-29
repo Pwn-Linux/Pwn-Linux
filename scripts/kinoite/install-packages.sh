@@ -47,6 +47,7 @@ ostree container commit
 
 #Install appmenu-gtk-module from Pwn Linux Repo
 rpm-ostree install \
+    appmenu-registrar \
     appmenu-gtk3-module \
     appmenu-gtk2-module && \
 ostree container commit
