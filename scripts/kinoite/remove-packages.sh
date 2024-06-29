@@ -25,6 +25,8 @@ rpm-ostree override remove \
     lutris \
     libdbusmenu \
     libdbusmenu-gtk3 \
+    libappindicator-gtk3 \
+    xapps \
     steam \
     fcitx5-mozc \
     fcitx5 \
