@@ -28,9 +28,9 @@ rpm-ostree install \
 ostree container commit
 
 #Install steamdeck-kde-presets-desktop from Pwn Linux Repo
-rpm-ostree install \
-    steamdeck-kde-presets-desktop && \
-ostree container commit
+# rpm-ostree install \
+#     steamdeck-kde-presets-desktop && \
+# ostree container commit
 
 #Install libdbusmenu and libdbusmenu-gtk{2,3} from Pwn Linux Repo
 rpm-ostree override replace \
