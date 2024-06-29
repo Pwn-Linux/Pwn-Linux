@@ -14,6 +14,8 @@ rpm-ostree override remove \
     plasma-discover-notifier \
     plasma-discover-flatpak \
     input-remapper \
+    ibus \
+    ibus-panel \
     kdebugsettings \
     kcharselect \
     kfind \
@@ -39,5 +41,6 @@ rpm-ostree override remove \
     rom-properties-kf6 \
     protontricks \
     steamdeck-kde-presets-desktop \
+    webapp-manager \
     qsynth && \
 ostree container commit
