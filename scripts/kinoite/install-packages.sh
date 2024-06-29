@@ -79,6 +79,11 @@ git clone https://gitlab.com/divinae/uswitch && \
 mv /tmp/uswitch/package /usr/share/plasma/plasmoids/com.dv.uswitcher && \
 ostree container commit
 
+#Install kde-rounded-corners from Pwn Linux Repo
+rpm-ostree install \
+   kde-rounded-corners && \
+ostree container commit
+
 #Install Tela Circle Icons from Pwn Linux Repo
 rpm-ostree install \
    Tela-circle-icon-theme  && \
