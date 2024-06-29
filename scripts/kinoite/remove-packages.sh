@@ -13,9 +13,6 @@ rpm-ostree override remove \
     plasma-discover-libs \
     plasma-discover-notifier \
     plasma-discover-flatpak \
-    input-remapper \
-    ibus \
-    ibus-panel \
     kdebugsettings \
     kcharselect \
     kfind \
@@ -25,9 +22,7 @@ rpm-ostree override remove \
     krfb-libs \
     kwrite \
     lutris \
-    libdbusmenu \
-    libdbusmenu-gtk3 \
-    libappindicator-gtk3 \
+    libdbusmenu-gtk3.i686 \
     xapps \
     steam \
     fcitx5-mozc \
