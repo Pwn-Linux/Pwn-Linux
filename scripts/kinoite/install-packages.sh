@@ -24,6 +24,7 @@ rpm-ostree install \
     flatpak-builder \
     qt6-qt5compat \
     samba \
+    python3-websockets \
     cargo && \
 ostree container commit
 
