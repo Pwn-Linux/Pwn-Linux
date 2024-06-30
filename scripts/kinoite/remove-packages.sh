@@ -20,7 +20,7 @@ rpm-ostree override remove \
     kjournald-libs \
     krfb \
     krfb-libs \
-    input-remapper \
+    # input-remapper \
     kwrite \
     lutris \
     steam \
