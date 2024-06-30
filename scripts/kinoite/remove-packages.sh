@@ -34,6 +34,5 @@ rpm-ostree override remove \
     rom-properties-kf6 \
     protontricks \
     webapp-manager \
-    steamdeck-kde-presets-desktop \
-    qsynth && \
+    steamdeck-kde-presets-desktop && \
 ostree container commit
