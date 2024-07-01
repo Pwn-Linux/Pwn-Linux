@@ -51,7 +51,6 @@ else
     echo "File does not exist. Running commands..."
     # Commands to run if the pwn-linux-setup file does not exist
   cp /usr/share/pwn-linux/skel/.config/no-show-user-motd $HOME/.config/no-show-user-motd
-  rsync -avu "/usr/share/pwn-linux/skel/.config/gtk-3.0/" "$HOME/.config/gtk-3.0"
   rsync -avu "/usr/share/pwn-linux/skel/.config/gtk-4.0/" "$HOME/.config/gtk-4.0"
   cp /usr/share/pwn-linux/skel/.local/share/flatpak/overrides/global $HOME/.local/share/flatpak/overrides/global
   cp /usr/share/pwn-linux/skel/.local/share/flatpak/overrides/com.valvesoftware.Steam $HOME/.local/share/flatpak/overrides/com.valvesoftware.Steam
