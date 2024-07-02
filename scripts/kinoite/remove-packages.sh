@@ -31,6 +31,7 @@ rpm-ostree override remove \
     fcitx5-lua \
     fcitx5-qt \
     fcitx5-qt5 \
+    input-remapper \
     rom-properties-kf6 \
     protontricks \
     webapp-manager \
