@@ -9,10 +9,6 @@ rpm-ostree override remove \
     discover-overlay \
     filelight \
     firewall-config \
-    plasma-discover \
-    plasma-discover-libs \
-    plasma-discover-notifier \
-    plasma-discover-flatpak \
     kdebugsettings \
     kcharselect \
     kfind \

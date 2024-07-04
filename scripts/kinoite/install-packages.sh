@@ -22,6 +22,7 @@ rpm-ostree install \
     pamixer \
     playerctl \
     flatpak-builder \
+    plasma-discover-rpm-ostree \
     qt6-qt5compat \
     samba \
     python3-websockets \
