@@ -22,6 +22,11 @@ FEDORA_VERSION=$(jq -r '."fedora-version"' < $IMAGE_INFO)
     echo "Contents rsynced and updated from /usr/share/pwn-linux/sddm to /var/sddm."
    fi 
  fi
-
+ 
+if [ -f "/etc/pwn-linux-setup" ]; then
+    echo "File exists. No action needed."
+else
 flatpak remote-add --if-not-exists --system flathub /usr/etc/flatpak/remotes.d/flathub.flatpakrepo
 flatpak remote-add --if-not-exists --system Fedora oci+https://registry.fedoraproject.org
+touch /etc/pwn-linux-setup
+fi
