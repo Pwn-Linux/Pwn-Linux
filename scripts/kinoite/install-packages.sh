@@ -18,7 +18,6 @@ rpm-ostree install \
     rust \
     krdp \
     gamemode \
-    gnome-software \
     pamixer \
     playerctl \
     flatpak-builder \
