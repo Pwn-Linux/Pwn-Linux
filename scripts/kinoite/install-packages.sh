@@ -20,6 +20,7 @@ rpm-ostree install \
     gamemode \
     pamixer \
     playerctl \
+    plasma-firewall \
     flatpak-builder \
     qt6-qt5compat \
     samba \
