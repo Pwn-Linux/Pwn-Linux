@@ -240,7 +240,7 @@ screens:
     source: yafti.screen.title
     values:
       title: "All done!"
-      icon: "/usr/share/ublue-os/bazzite/logo.svg"
+      icon: "/usr/share/pwn-linux/fetch-logo.png"
       links:
       - "Install More Applications":
           run: /usr/bin/plasma-discover
