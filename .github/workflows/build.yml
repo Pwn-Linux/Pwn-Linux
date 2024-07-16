@@ -214,7 +214,7 @@ jobs:
 
       # Sign container
       - name: Sign container image
-        uses: EyeCantCU/cosign-action/sign@v0.2.2
+        uses: EyeCantCU/cosign-action/sign@v0.3.0
         if: github.event_name != 'pull_request'
         with:
           containers: ${{ env.IMAGE_NAME }}
