@@ -9,7 +9,7 @@ ostree container commit
 # Remove uneeded files
 rm /usr/share/applications/com.gerbilsoft.rom-properties.rp-config.desktop && \
 rm /usr/share/applications/org.gnome.Prompt.desktop && \
-rm /usr/share/applications/bazzite-landing.desktop && \
+rm /usr/share/applications/Documentation.desktop && \
 rm /usr/share/applications/org.kde.krdp.desktop && \
 rm -r /usr/share/plasma/look-and-feel/org.fedoraproject.fedora.desktop && \
 ostree container commit

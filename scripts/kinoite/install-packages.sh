@@ -21,6 +21,7 @@ rpm-ostree install \
     pamixer \
     playerctl \
     plasma-firewall \
+    podman-compose \
     flatpak-builder \
     qt6-qt5compat \
     samba \
