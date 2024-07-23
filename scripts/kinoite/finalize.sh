@@ -70,8 +70,7 @@ rm /usr/share/metainfo/org.kde.konsole.appdata.xml && \
 rm /usr/share/qlogging-categories6/konsole.categories && \
 rm /usr/share/zsh/site-functions/_konsole && \
 rm /etc/xdg/konsolerc && \
-rm /usr/lib64/libkonsoleapp.so.24.05.0 && \
-rm /usr/lib64/libkonsoleprivate.so.24.05.0 && \
+rm /usr/lib64/libkonsoleapp.so* && \
 rm /usr/lib64/qt6/plugins/kf6/parts/konsolepart.so && \
 rm /usr/lib64/qt6/plugins/konsoleplugins/konsole_quickcommandsplugin.so && \
 rm /usr/lib64/qt6/plugins/konsoleplugins/konsole_sshmanagerplugin.so && \
