@@ -24,6 +24,7 @@ rpm-ostree override remove \
     fcitx5-chinese-addons \
     fcitx5-chinese-addons-data \
     fcitx5-data \
+    fcitx5-hangul \
     fcitx5-lua \
     fcitx5-qt \
     fcitx5-qt5 \
